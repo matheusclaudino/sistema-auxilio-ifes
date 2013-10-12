@@ -1,0 +1,579 @@
+/*
+
+    Theme Name: 
+    Theme URI: 
+    Description: 
+    Author:
+    Version: 1.0
+
+*/
+
+
+/* Fontes 
+============================================================================================================== */
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Effects
+============================================================================================================== */
+.menu li {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/* User Interface 
+============================================================================================================== */
+
+/* Text */
+a {
+    color: #57a127;
+}
+
+a:hover {
+    color: #57a127;
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h1 {
+    color: #3e3e3e;
+}
+
+
+/* Form fields */
+textarea:focus, 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="time"]:focus, 
+input[type="week"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus, 
+input[type="url"]:focus, 
+input[type="search"]:focus, 
+input[type="tel"]:focus, 
+input[type="color"]:focus, 
+.uneditable-input:focus {   
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+}
+
+
+/* Styles */
+.sty-green {
+    background: #88d158;
+    background: -webkit-linear-gradient(top, #88d158, #76c045) repeat-X;
+    color: #f9f9f9;
+    text-shadow: 0 1px 0 #74786b;
+    padding: 8px 11px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.sty-green:hover {
+    color: #f9f9f9;
+    background: #94d967;
+}
+
+.sty-green:active {
+    background: #5b9735;
+    background: -webkit-linear-gradient(top, #88d158, #76c045) repeat-X;
+    color: #f9f9f9;
+    text-shadow: 0 1px 0 #74786b;
+    padding: 8px 11px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.sty-green-2 {
+    background: #88d158;
+    background: -webkit-linear-gradient(top, #88d158, #76c045) repeat-X;
+    color: #f9f9f9;
+    text-shadow: 0 1px 0 #74786b;
+    border-bottom: 1px solid #48901a !important;
+    -moz-box-shadow:inset 0 -1px 0px #86d155;
+    -webkit-box-shadow:inset 0 -1px 0px #86d155;
+    box-shadow:inset 0 -1px 0px #86d155;
+}
+
+.sty-green-3 {
+    background: #66ad39;
+    color: #f9f9f9;
+    text-shadow: 0 1px 0 #74786b;
+    border-bottom: 1px solid !important;
+    border-bottom-color: #48901a !important;
+    -moz-box-shadow:inset 0 -1px 0px #86d155;
+    -webkit-box-shadow:inset 0 -1px 0px #86d155;
+    box-shadow:inset 0 -1px 0px #86d155;
+}
+
+.sty-green-3:hover,
+.sty-green-3:active {
+    background: #75bb49;
+}
+
+.sty-green-3 a {
+    color: #f9f9f9 !important;
+    text-shadow: 0 1px 2px #1b310c;
+}
+
+.sty-dark-green {
+    background: #48901a;
+}
+
+.sty-darker-green {
+    background: #5b9735;
+    border: 0;
+}
+
+.sty-darker-green:active,
+.sty-darker-green:hover {
+    background: #487f26 !important;
+}
+
+.sty-pea-green {
+    background: #d1d8bb;
+    color: #5f6352;
+    text-shadow: 0 2px 0 #fff;
+    display: inline-block;
+    padding: 4px 6px;
+    border: 1px solid #eff1e7;
+    border-radius: 5px;
+}
+
+.sty-pea-green:hover {
+    color: #5f6352;
+}
+
+.sty-pea-green:active {
+    background: #989d89;
+    color: #fff;
+    text-shadow: 0 0 0 #989d89;
+    border: 1px solid #989d89;
+}
+
+
+/* Icons */
+.icon {
+    background: url(../img/sprite.png) no-repeat;
+    width: 60px;
+    height: 60px;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+.transporte-icon {
+    background-position: 0 0;
+}
+
+.alimentacao-icon {
+    background-position: -120px 0;
+}
+
+.monitoria-icon {
+    background-position: -60px 0;
+}
+
+.moradia-icon {
+    background-position: -180px 0;
+}
+
+
+/* Mini Icons */
+.mini-icon {
+    background: url(../img/sprite.png) no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.email-icon {
+    
+    background-position:  0 -126px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: -6px;
+}
+
+.phone-icon{
+    background-position: -20px -126px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: -6px;
+}
+
+.help-icon{
+    background-position: -40px -126px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: -6px;
+}
+
+
+
+/* Estrutura 
+============================================================================================================== */
+body {
+	background-color: #e7efd1;
+	background-image: url('../img/background-top.png'), url('../img/background-bottom.png');
+	background-repeat: repeat-x;
+	background-position: top, bottom;
+	margin: auto;
+	font-family: 'open_sansregular', Arial, sans-serif;
+}
+
+.main {
+    background: url(../img/12_col.gif) repeat-y center;
+	width: 100%;
+	min-width: 320px;
+    max-width: 960px;
+	margin: auto;
+}
+
+
+
+/* Header 
+============================================================================================================== */
+.header-main {
+    padding: 10px 0;
+}
+
+.header-main .row {
+    margin: 0;
+}
+
+
+/* ===== Logo ===== */
+.logo {
+    padding: 10px 0;
+}
+
+.logo img {
+	margin: auto;
+	display: block;
+}
+
+.logo h1 {
+	font-size: 0;
+}
+
+
+/* ===== Login ===== */
+.login {
+    background: red;
+}
+
+.login .form-group {
+    padding: 0;
+}
+
+.login .login-btn {
+    text-align: right;
+}
+
+.login .pass {
+    float: left;
+}
+
+
+/* ===== Menu ===== */
+.menu {
+    width: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+}
+
+.menu .navbar-header {
+    border: 0;
+}
+
+.menu .navbar-collapse {
+    padding: 0;
+    border: 0;
+}
+
+.menu .navbar-nav li {
+    margin: 0;
+    border: 0;
+}
+
+.menu ul {
+    margin: 0;
+}
+
+
+
+/* Content 
+============================================================================================================== */
+.content-main {
+    background: green;
+}
+
+
+/* ===== Slider ===== */
+.slider {
+    background: white;
+    padding: 0;
+}
+
+
+/* ===== Jumbotron ===== */
+.jumbotron-main {
+    font-size: 1.15em;
+    color: white;
+    font-style: italic;
+    text-align: center;
+    background: red;
+    border-bottom: 1px solid #dadada;
+    margin: 0 0 10px;
+    padding: 10px 0;
+}
+
+
+/* ===== Lista de Auxílios ===== */
+.auxilios-lista {
+    background: blue;
+}
+
+.auxilios-lista .group-auxilio {
+    background: red;
+    margin: 0;
+}
+
+.auxilios-lista .group-auxilio:nth-child(odd) {
+    background: yellow;
+}
+
+
+/* === Auxílio Box === */
+.auxilio-box {
+    background: white;
+    border-bottom: 1px solid #dadada;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+}
+
+
+/* Links */
+.auxilio-box a,
+.auxilio-box a:hover {
+    text-decoration: none;
+}
+
+
+/* Images */
+.auxilio-box .img-auxilio { 
+    background-color: black;
+    margin-right: 10px; 
+}
+
+.auxilio-box:hover .transporte-icon {
+    background-position: 0 -60px;
+}
+
+.auxilio-box:hover .monitoria-icon {
+    background-position: -60px -60px;
+}
+
+.auxilio-box:hover .alimentacao-icon {
+    background-position: -120px -60px;
+}
+
+.auxilio-box:hover .moradia-icon {
+    background-position: -180px -60px;
+}
+
+
+/* Title */
+.auxilio-box .title {
+    background: black;
+}
+
+.auxilio-box .title h2 {
+    color: #3e3e3e;
+    padding: 0;
+    margin: 0;
+}
+
+.auxilio-box .description {
+    background: black;
+    color: #858585;
+}
+
+.auxilio-box .description p {
+    margin: 0.36em 0 0;
+}
+
+
+/* sign-up index */
+.sign-up {
+    text-align: center;
+}
+
+
+
+/* Footer 
+============================================================================================================== */
+.footer-main {
+    background: yellow;
+    text-align: center; 
+    height: 100px;
+    padding: 10px 10px;
+}
+
+.logo-min {
+    background: url(../img/sprite.png) no-repeat; 
+    width:62px;
+    height: 18px;
+    background-position: -65px -126px;
+    margin-right: 6px;
+    display: inline-block;
+    margin-bottom: -3px;
+}
+
+
+
+
+
+/* Tablet
+============================================================================================================== */
+@media (min-width: 768px) {
+
+    /* Header 
+    =========================================================== */
+
+    /* ===== Login ===== */
+    .login {
+        padding: 0;
+        margin: 15px 0 0 0;
+    }
+
+    .login .form-group {
+        padding: 0 5px;
+    }
+
+    .login .login-btn {
+        margin-right: 5px;
+    }
+
+    .login .pass {
+        margin-left: 5px;
+    }
+
+    /* ===== Menu ===== */
+    .menu {
+        border:none 5px #000000;
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-bottomleft: 0px;
+        -moz-border-radius-bottomright: 0px;
+        -webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 0px;
+        -webkit-border-bottom-right-radius: 0px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        min-height: 40px;
+        padding: 0 15px;
+        background: #88d158; /* Old browsers */
+        background: -moz-linear-gradient(top,  #88d158 0%, #76c045 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88d158), color-stop(100%,#76c045)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #88d158 0%,#76c045 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #88d158 0%,#76c045 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #88d158 0%,#76c045 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #88d158 0%,#76c045 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88d158', endColorstr='#76c045',GradientType=0 ); /* IE6-9 */
+        color: #f9f9f9;
+        text-shadow: 0 1px 0 #74786b;
+        -moz-box-shadow:inset 0 -1px 0px #86d155;
+        -webkit-box-shadow:inset 0 -1px 0px #86d155;
+        box-shadow:inset 0 -1px 0px #86d155;
+        border-bottom: 1px solid #48901a; 
+    }
+
+    .menu .navbar-header {
+        border: 0 !important;
+    }
+
+    .menu .navbar-nav {
+        -moz-box-shadow:inset 1px 0px 0px #69ae3c;
+        -webkit-box-shadow:inset 1px 0px 0px #69ae3c;
+        box-shadow:inset 1px 0px 0px #69ae3c;
+        border-left: 1px solid #86d155 !important;
+        background: transparent;
+    }
+
+    .menu .navbar-nav li {
+        background: inherit;
+        border-bottom: 0 !important;
+        border-right: 1px solid #86d155 !important;
+        -moz-box-shadow:inset -1px 0px 0px #69ae3c;
+        -webkit-box-shadow:inset -1px 0px 0px #69ae3c;
+        box-shadow:inset -1px 0px 0px #69ae3c;
+    }
+
+    .menu .navbar-nav li:hover {
+        background: #94d967;
+    }
+
+    .menu .navbar-nav li a {
+        padding: 10px 15px;
+        height: 40px;
+    }
+
+
+    /* Content 
+    =========================================================== */
+    /* sign-up index */
+    .sign-up {
+        text-align: center;
+    }
+
+    .btn-sign-up {
+        display: block;
+    }
+
+    .info {
+        display: inline-block;
+    }
+
+
+}
+
+
