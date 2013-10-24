@@ -72,6 +72,7 @@ h1 {
 
 /* == Forms ========== */
 /* Form fields */
+.form-control:focus,
 textarea:focus, 
 input[type="text"]:focus, 
 input[type="password"]:focus, 
@@ -503,6 +504,13 @@ body {
 .menu .navbar-nav li {
     margin: 0;
     border: 0;
+    color: #fff;
+}
+
+.menu .navbar-nav li a:hover,
+.menu .navbar-nav li a {
+    color: #fff;
+    text-shadow: 0 1px 0 #74786b;
 }
 
 .menu ul {
@@ -515,6 +523,9 @@ body {
 ============================================================================================================== */
 .content-main {
     background: #fff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    overflow: hidden;
 }
 
 
