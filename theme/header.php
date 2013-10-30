@@ -42,8 +42,11 @@
                  
                  <div class="col-xs-12 col-sm-5 logo">
                      
-                   <a href="#"><img src="img/logo-auxilio.png" alt="Auxílio IFES"></a>
-                   <h1>Auxílio IFES</h1>
+                   <a href="index.php"><img src="img/logo-auxilio.png" alt="Auxílio IFES"></a>
+                   <!-- Index -->
+                   <!-- <h1>Auxílio IFES</h1> -->
+                   <!-- Outras páginas -->
+                   <div>Auxílio IFES</div>
 
                  </div> <!-- /.logo -->
 
@@ -55,6 +58,4 @@
             
           <?php  include 'menu.php' ?>
 
-          <?php  include 'slide.php' ?>
-
-          <section class="col-xs-12 content-main">
+          

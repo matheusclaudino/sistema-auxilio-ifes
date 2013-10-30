@@ -119,7 +119,7 @@ input[type="color"]:focus,
 
 /* == Codes ========== */
 pre {
-    border: 0;
+    border: 1px solid #dfdfdf;
     color: #7b7b7b;
 }
 
@@ -128,6 +128,8 @@ pre {
 .breadcrumb {
     background: transparent;
     font-size: 0.9em;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -427,6 +429,30 @@ body {
 	margin: auto;
 }
 
+.clear {
+    clear: both;
+}
+
+.txt_right {
+    text-align: right;
+}
+
+
+
+/* Page 
+============================================================================================================== */
+.page-title {
+    font-size: 1.5em;
+    margin: 0.83em 0 0.83em;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #dfdfdf;
+    text-transform: uppercase;
+}
+
+.page-box {
+    margin: 0 0 3em;
+}
+
 
 
 /* Header 
@@ -443,15 +469,12 @@ body {
 /* == Logo ========== */
 .logo {
     padding: 10px 0;
+    font-size: 0;
 }
 
 .logo img {
 	margin: auto;
 	display: block;
-}
-
-.logo h1 {
-	font-size: 0;
 }
 
 
@@ -547,73 +570,64 @@ body {
 }
 
 
-/* == Lista de Auxílios ========== */
-.auxilios-lista {
-    
-}
+/* == Boxes ========== */
+.box-lista {}
 
-.auxilios-lista .group-auxilio {
-    
+.box-lista .box-group {
     margin: 0;
 }
 
-.auxilios-lista .group-auxilio:nth-child(odd) {
-    
-}
+.box-lista .box-group:nth-child(odd) {}
 
 /* Auxílio Box */
-.auxilio-box {
-    
+.content-box {
     border-bottom: 1px solid #dadada;
     margin: 0 0 10px 0;
     padding: 0 0 10px 0;
 }
 
 /* Links */
-.auxilio-box a,
-.auxilio-box a:hover {
+.content-box a,
+.content-box a:hover {
     text-decoration: none;
 }
 
 /* Images */
-.auxilio-box .img-auxilio { 
-    
+.content-box .img-box { 
     margin-right: 10px; 
 }
 
-.auxilio-box:hover .transporte-icon {
+.content-box:hover .transporte-icon {
     background-position: 0 -60px;
 }
 
-.auxilio-box:hover .monitoria-icon {
+.content-box:hover .monitoria-icon {
     background-position: -60px -60px;
 }
 
-.auxilio-box:hover .alimentacao-icon {
+.content-box:hover .alimentacao-icon {
     background-position: -120px -60px;
 }
 
-.auxilio-box:hover .moradia-icon {
+.content-box:hover .moradia-icon {
     background-position: -180px -60px;
 }
 
 /* Title */
-.auxilio-box .title {
-    
+.content-box .title {
 }
 
-.auxilio-box .title h2 {
+.content-box .title h2 {
     color: #3e3e3e;
     padding: 0;
     margin: 0;
 }
 
-.auxilio-box .description {
-    
+.content-box .description {
     color: #858585;
 }
 
-.auxilio-box .description p {
+.content-box .description p {
     margin: 0.36em 0 0;
 }
 
@@ -625,6 +639,27 @@ body {
 
 .btn-sign-up {
     margin-bottom: 10px;
+}
+
+
+
+/* FAQ 
+============================================================================================================== */
+.faq {}
+
+.faq-item {
+    margin: 0 0 2em;
+}
+
+.faq-title {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}
+
+.faq-txt {
+    margin: 0;
 }
 
 
@@ -760,7 +795,7 @@ body {
     =========================================================== */
 
     /* == Auxílio Box ========== */
-    .auxilio-box {
+    .content-box {
         
         border-bottom: 0;
     }
