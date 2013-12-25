@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<!doctype html>
+<html  lang="pt-BR">
     <head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
 
         <title>Auxílio IFES</title>
 
@@ -14,12 +10,9 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" href="touch-icon-iphone.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
-        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Icons -->
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+        <link rel="shortcut icon" href="img/favicon.ico">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -57,5 +50,3 @@
           </div><!-- /.header-main -->
             
           <?php  include 'menu.php' ?>
-
-          
