@@ -14,13 +14,9 @@
         <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
         <link rel="shortcut icon" href="img/favicon.ico">
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
         <!-- Styles -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/responsiveslides.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/lib/responsiveslides.css">
+        <link rel="stylesheet" href="css/style.min.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 

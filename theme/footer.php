@@ -14,11 +14,12 @@
       </div> <!-- /.main -->
 
       <!-- Scripts -->
-      <script src="js/vendor/jquery-1.10.2.min.js"></script>
-      <script src="js/vendor/bootstrap.min.js"></script>
-      <script src="js/vendor/responsiveslides.min.js"></script>
-      <script src="js/plugins.js"></script>
-      <script src="js/main.js"></script>
+      <script src="js/lib/jquery.min.js"></script>
+      <script src="js/lib/responsiveslides.min.js"></script>
+      <script src="js/main.min.js"></script>
+
+      <!-- Livereload -->
+      <script src="http://localhost:35729/livereload.js"></script>
 
     </body>
 </html>
