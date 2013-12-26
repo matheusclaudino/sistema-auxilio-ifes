@@ -1,0 +1,105 @@
+// Theme Name: Layout Boilerplate
+// Theme URI: https://github.com/luizventurote/layout-boilerplate
+// Author: Luiz Venturote
+// Author URI: http://www.luizventurote.com/
+// Description: This is a layout boilerplate for projects.
+// Version: 1.0
+
+
+// === Variables =============================================================================== //
+$font_default: 12px;
+
+
+// === Media queries =========================================================================== //
+$bp-sm-min: 480px;
+
+
+// === Mixins ================================================================================== //
+// Border Radius
+@mixin borderRadius($radius: 5px) {
+	-webkit-border-radius:  $radius;
+	-moz-border-radius: 	$radius;
+	border-radius: 			$radius;
+}
+
+// Box Shadow
+@mixin boxShadow($x:5px , $y:5px, $blur:5px, $color:#000) {
+	-webkit-box-shadow: $x $y $blur $color;
+	-moz-box-shadow:    $x $y $blur $color;
+	box-shadow:         $x $y $blur $color;
+}
+
+@mixin transitionEffect($time:0.25s){
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: 	all $time ease-in-out;
+	-o-transition: 		all $time ease-in-out;
+	-ms-transition: 	all $time ease-in-out;
+	transition: 		all $time ease-in-out;
+}
+
+
+// === Fonts =================================================================================== //
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Font Light
+@mixin FontLight() {
+	font-family: 'open_sanslight', Helvetica, Arial, sans-serif;
+}
+
+// Font Regular
+@mixin FontRegular() {
+	font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
+}
+
+// Font Bold
+@mixin FontBold() {
+	font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
+}
+
+
+/* === Structure =============================================================================== */
+body {
+	background: #aaa;
+	@include FontRegular();
+	font-size: $font_default;
+}
+
+
+/* === UI ====================================================================================== */
+
+// --- Elements ------------------------- //
+
+
+/* === Example media queries =================================================================== */
+@media (min-width: $bp-sm-min) {}
