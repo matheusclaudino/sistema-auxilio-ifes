@@ -15,10 +15,7 @@
         <link rel="shortcut icon" href="img/favicon.ico">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="css/lib/responsiveslides.css">
-        <link rel="stylesheet" href="css/style.min.css">
-
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
 
     </head>
     <body>

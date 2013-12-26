@@ -3,15 +3,63 @@
     Theme Name: Auxílio IFES
     Theme URL: https://github.com/luizventurote/sistema-auxilio-ifes
     Description: Layout do site Auxílio IFES
-    Author: DedIFES
+    Author: DevIFES
     Version: 1.0
 
 */
 
 
+// === Media queries =========================================================================== //
+$screen-sm-min: 480px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
 
-/* Fontes 
-============================================================================================================== */
+
+// === Cores =================================================================================== //
+$clr_white: #fff;
+$clr_1: #f3f3f3;
+$clr_2: #fafafa;
+$clr_3: #d5d5d5;
+$clr_4: #37a3ae;
+
+
+// === Mixins ================================================================================== //
+
+// Border Radius
+@mixin borderRadius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// Box Shadow
+@mixin boxShadow($x:5px , $y:5px, $blur:5px, $color:#000) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow:    $x $y $blur $color;
+    box-shadow:         $x $y $blur $color;
+}
+
+@mixin transitionEffect($time: 0.25s){
+    -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    -ms-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+
+
+// === Fontes ================================================================================== //
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('../fonts/OpenSans-Regular-webfont.eot');
@@ -34,24 +82,25 @@
     font-style: normal;
 }
 
+// Font Light
+@mixin FontLight() {
+    font-family: 'open_sanslight', Helvetica, Arial, sans-serif;
+}
 
+// Font Regular
+@mixin FontRegular() {
+    font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
+}
 
-/* Effects
-============================================================================================================== */
-.menu li {
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+// Font Bold
+@mixin FontBold() {
+    font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
 }
 
 
+// === UI ===================================================================================== *//
 
-/* User Interface 
-============================================================================================================== */
-
-/* == Texts ========== */
+// --- Elements ------------------------- //
 a {
     color: #57a127;
 }
@@ -69,8 +118,7 @@ h1 {
     color: #3e3e3e;
 }
 
-
-/* == Forms ========== */
+// --- Forms ---------------------------- //
 /* Form fields */
 .form-control:focus,
 textarea:focus, 
@@ -94,8 +142,7 @@ input[type="color"]:focus,
     outline: 0 none;
 }
 
-
-/* == Buttons ========== */
+// --- Buttons -------------------------- //
 .btn {
     padding: 8px 11px;
     border-radius: 5px;
@@ -116,15 +163,13 @@ input[type="color"]:focus,
     padding: 4px 7px;
 }
 
-
-/* == Codes ========== */
+// --- Codes ---------------------------- //
 pre {
     border: 1px solid #dfdfdf;
     color: #7b7b7b;
 }
 
-
-/* == Breadcrumbs ========== */
+// --- Breadcrumbs ---------------------- //
 .breadcrumb {
     background: transparent;
     font-size: 0.9em;
@@ -132,15 +177,14 @@ pre {
     padding: 0;
 }
 
-
-/* == Pagination ========== */
+// --- Pagination ----------------------- //
 .pagination {
     display: block;
-}
 
-.pagination li {
-    display: inline-block;
-    margin: 0 2px;
+    li {
+        display: inline-block;
+        margin: 0 2px;
+    }
 }
 
 .pagination > li > a, .pagination > li > span {
@@ -159,8 +203,7 @@ pre {
     border: 1px solid #ababab;
 }
 
-
-/* == Styles ========== */
+// --- Styles --------------------------- //
 /* Default Style */
 .pagination > li > a, 
 .pagination > li > span,
@@ -350,8 +393,7 @@ pre {
     text-decoration: none;
 }
 
-
-/* == Icons ========== */
+// --- Icons ---------------------------- //
 .icon {
     background: url(../img/sprite.png) no-repeat;
     width: 60px;
@@ -379,8 +421,7 @@ pre {
     background-position: -180px 0;
 }
 
-
-/* == Mini Icons ========== */
+// --- Mini Icons ----------------------- //
 .mini-icon {
     background: url(../img/sprite.png) no-repeat;
     width: 20px;
@@ -410,15 +451,14 @@ pre {
 }
 
 
-
-/* Estrutura 
-============================================================================================================== */
+// === Estrutura ============================================================================== *//
 body {
 	background-color: #e7efd1;
 	background-image: url('../img/background-top.png'), url('../img/background-bottom.png');
 	background-repeat: repeat-x;
 	background-position: top, bottom;
 	margin: auto;
+    min-height: 100%;
 	font-family: 'open_sansregular', Arial, sans-serif;
 }
 
@@ -438,9 +478,7 @@ body {
 }
 
 
-
-/* Page 
-============================================================================================================== */
+// === Page =================================================================================== *//
 .page-title {
     font-size: 1.5em;
     margin: 0.83em 0 0.83em;
@@ -454,9 +492,7 @@ body {
 }
 
 
-
-/* Header 
-============================================================================================================== */
+// === Header ================================================================================= *//
 .header-main {
     padding: 10px 0;
 }
@@ -513,6 +549,10 @@ body {
     margin-bottom: 0;
     padding: 0;
     border: 0;
+
+    li {
+        @include transitionEffect();
+    }
 }
 
 .menu .navbar-header {
@@ -541,9 +581,7 @@ body {
 }
 
 
-
-/* Content 
-============================================================================================================== */
+// === Content ================================================================================ *//
 .content-main {
     background: #fff;
     padding-top: 10px;
@@ -554,8 +592,16 @@ body {
 
 /* == Slider ========== */
 .slider {
-    
     padding: 0;
+    background: #bed099;
+    border-left: 1px solid #bed099;
+    border-right: 1px solid #bed099;
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -642,9 +688,7 @@ body {
 }
 
 
-
-/* FAQ 
-============================================================================================================== */
+// === FAQ ==================================================================================== *//
 .faq {}
 
 .faq-item {
@@ -663,9 +707,7 @@ body {
 }
 
 
-
-/* Footer 
-============================================================================================================== */
+// === Footer ================================================================================= *//
 .footer-main {
     text-align: center; 
     color: #798362;
@@ -687,13 +729,12 @@ body {
 
 
 
-
-/* Tablet
-============================================================================================================== */
+// === Extra small devices ==================================================================== *//
 @media (min-width: 768px) {
 
     .content-main {
-        border: 1px solid #bed099;  
+        border: 1px solid #bed099;
+        border-top: 1px solid #dadada;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         border-bottom-left-radius: 10px;
@@ -704,11 +745,8 @@ body {
         -webkit-border-bottom-right-radius: 10px; /* Safari */       
     }
 
-
-    /* Header 
-    =========================================================== */
-
-    /* == Login ========== */
+    // === Header ========================================================= *//
+    // --- Login ----------------------------- //
     .login {
         padding: 0;
         margin: 0;
@@ -731,7 +769,7 @@ body {
     }
 
 
-    /* == Menu ========== */
+    // --- Menu ------------------------------ //
     .menu {
         border:none 5px #000000;
         border-bottom: 1px solid #48901a; 
@@ -791,17 +829,15 @@ body {
     }
 
 
-    /* Content 
-    =========================================================== */
-
+    // === Contet ========================================================= *//
+    // --- Auxílio Box ----------------------- //
     /* == Auxílio Box ========== */
     .content-box {
         
         border-bottom: 0;
     }
 
-
-    /* == sign-up index ========== */
+    // --- sign-up index --------------------- //
     .sign-up {
         text-align: center;
     }

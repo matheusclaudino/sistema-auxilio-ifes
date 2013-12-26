@@ -14,8 +14,6 @@
       </div> <!-- /.main -->
 
       <!-- Scripts -->
-      <script src="js/lib/jquery.min.js"></script>
-      <script src="js/lib/responsiveslides.min.js"></script>
       <script src="js/main.min.js"></script>
 
       <!-- Livereload -->

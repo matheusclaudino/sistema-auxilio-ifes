@@ -1,23 +1,43 @@
 module.exports = function(grunt) {
 
-  // Libs
-  var jquery = 'build/js/lib/jquery.min.js';
-  var modernizr = 'build/js/lib/modernizr.min.js';
+  // Libs JS
   var bootstrap = 'build/js/lib/bootstrap.min.js';
+  var jquery = 'build/js/lib/jquery.min.js';
+  var slider = 'build/js/lib/owl.carousel.min.js';
 
   // Main JS
   var mainjs = 'build/js/main.js';
+
+  // Libs CSS
+  var bootstrap_css = 'build/css/bootstrap.min.css';
+  var slider_css = 'build/css/owl.carousel.css';
   
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
-      scripts: {
+      build: {
         files: ['**/*.js', '**/*.scss', '**/*.html', '**/*.php'],
-        tasks: ['concat', 'uglify', 'sass', 'concat_css', 'cssmin', 'cleancss'],
+        tasks: ['concat', 'uglify', 'sass', 'concat_css', 'cssmin', 'clean_sass'],
+        options: {
+          spawn: false,
+          livereload: true 
+        },
+      },
+      sass: {
+        files: ['**/*.scss', '**/*.html', '**/*.php'],
+        tasks: ['sass', 'concat_css', 'cssmin', 'clean_sass'],
+        options: {
+          spawn: false,
+          livereload: true 
+        },
+      },
+      js: {
+        files: ['**/*.js', '**/*.html', '**/*.php'],
+        tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
           livereload: true 
@@ -29,15 +49,19 @@ module.exports = function(grunt) {
       options: {
         separator: '\n\n\n'
       },
-      dist: {
-        src: [bootstrap, mainjs],
+      js: {
+        src: [jquery, bootstrap, slider, mainjs],
         dest: 'js/main.js'
+      },
+      css: {
+        src: [bootstrap_css, slider_css, 'css/cache-style.css'],
+        dest: 'css/style.css'
       }
     }, // concat
 
     uglify: {
       options: {
-        banner: '/*! By Luiz Venturote ;) */\n'
+        banner: '/*! Want to know more about it? Access the file js/main.js ;) */\n'
       },
       build: {
         src: 'js/main.js',
@@ -56,17 +80,10 @@ module.exports = function(grunt) {
       }
     }, // sass
 
-     concat_css: {
-      all: {
-        src: ['css/lib/bootstrap.min.css', 'css/cache-style.css'],
-        dest: 'css/style.css'
-      },
-    },
-
     cssmin: {
       add_banner: {
         options: {
-          banner: '/* By Luiz Venturote ;) */'
+          banner: '/* Want to know more about it? Access the file css/style.css ;) */'
         },
         files: {
           'css/style.min.css': ['css/style.css']
@@ -74,8 +91,20 @@ module.exports = function(grunt) {
       }
     }, // cssmin
 
+    copy: {
+      main: {
+        src: 'src/*',
+        dest: 'dest/',
+      },
+    }, // copy
+
     clean: {
-      concatcss: {
+      // Deletes files generated in the project construction
+      project: {
+        src: ['js/main.js', 'js/main.min.js', 'css/style.css', 'css/style.min.css']
+      },
+      // Deletes css files generated in the project construction
+      sass: {
         src: ['css/cache-style.css', '.sass-cache']
       }
     } // clean
@@ -83,17 +112,22 @@ module.exports = function(grunt) {
   });
 
 
-  // Load the plugin that provides the "uglify" task.
+  // Load the plugin(s).
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-concat-css');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'concat', 'sass', 'cssmin', 'clean', 'concat_css']);
-  grunt.registerTask('cleancss', ['clean:concatcss']);
+  grunt.registerTask('default', ['concat_js', 'uglify', 'sass', 'concat_css', 'cssmin', 'clean_sass']);
+  grunt.registerTask('concat_js', ['concat:js']);
+  grunt.registerTask('concat_css', ['concat:css']);
+  grunt.registerTask('clean_sass', ['clean:sass']);
+  grunt.registerTask('clean_project', ['clean:project']);
+  grunt.registerTask('wsass', ['watch:sass']);
+  grunt.registerTask('wjs', ['watch:js']);
 
 };

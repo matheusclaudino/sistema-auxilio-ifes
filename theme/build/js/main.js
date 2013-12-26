@@ -1,10 +1,14 @@
-// Responsive Slides
-$(function () {
-
-  // Slideshow 1
-  $("#slider1").responsiveSlides({
-    maxwidth: 960,
-    speed: 800
+// // Responsive Slides
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : false,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem: true,
+      autoPlay : true
+ 
   });
-
-}); // End Responsive Slides
+ 
+});
