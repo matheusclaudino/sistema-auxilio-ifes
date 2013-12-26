@@ -6,7 +6,7 @@ $(document).ready(function() {
       navigation : false,
       slideSpeed : 300,
       paginationSpeed : 400,
-      singleItem: true,
+      singleItem: true, 
       autoPlay : true
  
   });
