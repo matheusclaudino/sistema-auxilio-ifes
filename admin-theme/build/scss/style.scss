@@ -3,14 +3,12 @@
 // Author: Luiz Venturote
 // Author URI: http://www.luizventurote.com/
 // Description: This is a layout boilerplate for projects.
-// Version: 1.0
 
 
 // === Variables =============================================================================== //
 $font_default: 12px;
 
-
-// === Media queries =========================================================================== //
+// Media queries
 $bp-sm-min: 480px;
 
 
@@ -29,12 +27,32 @@ $bp-sm-min: 480px;
 	box-shadow:         $x $y $blur $color;
 }
 
+// Transition Effect
 @mixin transitionEffect($time:0.25s){
 	-webkit-transition: all $time ease-in-out;
 	-moz-transition: 	all $time ease-in-out;
 	-o-transition: 		all $time ease-in-out;
 	-ms-transition: 	all $time ease-in-out;
 	transition: 		all $time ease-in-out;
+}
+
+// Opacity
+@mixin Opacity($value: 0.5){
+    $aux_value: $value * 100;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=$aux_value);
+    -moz-opacity:$value;
+    -khtml-opacity: $value;
+    opacity: $value;
+}
+
+// transforns
+@mixin translateY($value: 0%) {
+    -webkit-transform: translateY($value);
+    -moz-transform: translateY($value);
+    -o-transform: translateY($value);
+    -ms-transform: translateY($value);
+    transform: translateY($value);
 }
 
 
@@ -88,18 +106,85 @@ $bp-sm-min: 480px;
 }
 
 
+/* ============================================================================================= */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+// Effects
+.effect {
+    @include transitionEffect();
+}
+
+// Transparent 
+.transparent {
+    @include Opacity(0.8);  
+}
+
+
 /* === Structure =============================================================================== */
 body {
-	background: #aaa;
 	@include FontRegular();
 	font-size: $font_default;
 }
 
+.main {
+    min-width: 320px;
+}
 
-/* === UI ====================================================================================== */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 0;
+}
 
-// --- Elements ------------------------- //
+
+/* === Elements ================================================================================ */
+a {
+    @extend .effect;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+h1 {
+    @include FontRegular();
+    font-size: 3em;
+}
+
+h2 {
+    @extend h1;
+    font-size: 2.3em;
+}
+
+h3 {
+    @extend h1;
+    font-size: 1.8em;
+}
+
+h4 {
+    @extend h1;
+    font-size: 1.6em;
+}
+
+h5 {
+    @extend h1;
+    font-size: 1.3em;
+}
+
+h6 {
+    @extend h1;
+    font-size: 1em;
+}
 
 
-/* === Example media queries =================================================================== */
+/* === Media Queries =================================================================== */
 @media (min-width: $bp-sm-min) {}

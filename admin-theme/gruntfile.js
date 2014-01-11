@@ -1,8 +1,12 @@
 module.exports = function(grunt) {
 
-  // Libs
+  // Js Libs
   var bootstrap = 'build/js/lib/bootstrap.min.js';
   var jquery = 'build/js/lib/jquery.min.js';
+
+  // CSS Libs
+  var bootstrap_css = 'build/css/bootstrap.min.css';
+  var font_awesome_css = 'build/css/font-awesome.min.css'
 
   // Main JS
   var mainjs = 'build/js/main.js';
@@ -16,13 +20,21 @@ module.exports = function(grunt) {
     watch: {
       build: {
         files: ['**/*.js', '**/*.scss', '**/*.html', '**/*.php'],
-        tasks: ['concat', 'uglify', 'sass', 'concat_css', 'cssmin', 'clean_sass'],
+        tasks: ['concat', 'uglify', 'sass', 'concat_css', 'cssmin'],
         options: {
           spawn: false,
           livereload: true 
         },
       },
       sass: {
+        files: ['**/*.scss', '**/*.html', '**/*.php'],
+        tasks: ['sass', 'concat_css', 'cssmin'],
+        options: {
+          spawn: false,
+          livereload: true 
+        },
+      },
+      sassc: {
         files: ['**/*.scss', '**/*.html', '**/*.php'],
         tasks: ['sass', 'concat_css', 'cssmin', 'clean_sass'],
         options: {
@@ -49,7 +61,7 @@ module.exports = function(grunt) {
         dest: 'js/main.js'
       },
       css: {
-        src: ['build/css/bootstrap.min.css', 'css/cache-style.css'],
+        src: [bootstrap_css, font_awesome_css, 'css/cache-style.css'],
         dest: 'css/style.css'
       }
     }, // concat
@@ -123,6 +135,7 @@ module.exports = function(grunt) {
   grunt.registerTask('clean_sass', ['clean:sass']);
   grunt.registerTask('clean_project', ['clean:project']);
   grunt.registerTask('wsass', ['watch:sass']);
+  grunt.registerTask('wsassc', ['watch:sassc']);
   grunt.registerTask('wjs', ['watch:js']);
 
 };

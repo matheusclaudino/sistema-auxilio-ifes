@@ -1,6 +1,6 @@
 {
-  "name": "admin-theme",
-  "version": "0.0.1",
+  "name": "layout-boilerplate",
+  "version": "1.0.1",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-uglify": "~0.2.7",
