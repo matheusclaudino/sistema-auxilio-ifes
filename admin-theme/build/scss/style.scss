@@ -1,17 +1,24 @@
-// Theme Name: Layout Boilerplate
-// Theme URI: https://github.com/luizventurote/layout-boilerplate
-// Author: Luiz Venturote
-// Author URI: http://www.luizventurote.com/
-// Description: This is a layout boilerplate for projects.
+/*
+
+    Theme Name: Auxílio IFES
+    Theme URL: https://github.com/luizventurote/sistema-auxilio-ifes
+    Description: Layout para o site Auxílio IFES
+    Author: DevIFES
+  
+*/
 
 
 // === Variables =============================================================================== //
-$font_default: 12px;
+$font-default: 13px;
+
+// Colors
+$default-font-color: #3a3939;
+
 
 // Media queries
-$bp-sm-min: 480px;
+$bp-sm-min: 768px;
 
-
+ 
 // === Mixins ================================================================================== //
 // Border Radius
 @mixin borderRadius($radius: 5px) {
@@ -70,11 +77,11 @@ $bp-sm-min: 480px;
 
 @font-face {
     font-family: 'open_sansregular';
-    src: url('../fonts/OpenSans-Semibold-webfont.eot');
-    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
-         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
-         url('../fonts/OpenSans-Semibold-webfont.svg#open_sansregular') format('svg');
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -123,11 +130,19 @@ $bp-sm-min: 480px;
     @include Opacity(0.8);  
 }
 
+// Neutral style
+.neutral-sty {
+    color: #fff;
+    background: #3a3939;
+    text-shadow: 0 2px 3px #000;
+}
+
 
 /* === Structure =============================================================================== */
 body {
 	@include FontRegular();
-	font-size: $font_default;
+	font-size: $font-default;
+    color: $default-font-color;
 }
 
 .main {
@@ -153,38 +168,262 @@ a:hover {
 img {
     height: auto;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     @include FontRegular();
-    font-size: 3em;
+    font-size: 2.4rem;
+    text-transform: uppercase;
 }
 
 h2 {
     @extend h1;
-    font-size: 2.3em;
+    font-size: 2.2rem;
 }
 
 h3 {
     @extend h1;
-    font-size: 1.8em;
+    font-size: 2rem;
 }
 
 h4 {
     @extend h1;
-    font-size: 1.6em;
+    font-size: 1.8rem;
 }
 
 h5 {
     @extend h1;
-    font-size: 1.3em;
+    font-size: 1.6rem;
 }
 
 h6 {
     @extend h1;
-    font-size: 1em;
+    font-size: 1.35rem;
+}
+
+// Titles
+.title-1 {
+    @extend h1;
+}
+
+.title-2 {
+    @extend h2;
+}
+
+.title-3 {
+    @extend h3;
+}
+
+.title-4 {
+    @extend h4;
+}
+
+.title-5 {
+    @extend h5;
+}
+
+.title-6 {
+    @extend h6;
+}
+
+// Navbar
+.top-bar {
+    display: block;
+    width: 100%;
+    @include borderRadius(0);
+    @extend .neutral-sty;
+
+    .top-bar-brand {
+        width: 100%;
+        padding: 5px 0 5px;
+        float: none;
+    }
+
+    .top-bar-nav {
+        width: 100%;
+        padding: 0 10px 0 0;
+        display: block;
+        margin: 0;
+        float: none;
+        background: #424242;
+        text-align: right;
+
+        .dropdown:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .top-bar-item {   
+        border-left: 1px solid #3a3939;
+        margin-left: -4px;
+        padding: 0 8px;
+    }
+}
+
+// Dropdown Toggle
+.dropdown {
+    display: inline-block;
+
+    .dropdown-toggle {
+        display: inline-block;
+        margin: 0px;
+        padding: 7px 10px 7px;
+        position: relative;
+        cursor: pointer;
+        color: inherit;
+
+        &.icon {
+            vertical-align: -7px;
+            padding-top: 17px;
+        }
+
+        .dropdown-icon {
+            font-size: 1.8rem;  
+        }
+
+        .badge {
+            position: absolute;
+            top: 9px;
+            right: 3px;
+            padding: 2px 6px 4px;
+            @include FontLight();
+            background: #df2e34;
+            @include borderRadius(50%);
+        }
+
+        .user-name {
+            display: inline-block;
+            padding: 0 10px 0 0;
+            
+            .icon {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        color: $default-font-color;
+        font-size: 1em;
+        font-weight: normal;
+        text-shadow: 0 0 0 #000;
+        text-align: left;
+        left: auto;
+        margin-top: 0;
+        padding: 10px;
+        left: auto;
+        right: 0;
+        @include borderRadius(0);
+
+        .dropdown-menu-list {
+            margin-bottom: 10px;
+
+            li {
+                width: 100%;
+                margin: 0;
+                border-bottom: 1px solid #d0d0d0;
+                @extend .effect;
+
+                &:hover {
+                    background: #f6f6f6;
+                    padding: 0 0 0 5px;
+                    @extend .effect;
+                }
+
+                &:active {
+                    background: #eee;
+                }
+
+                a {
+                    background-color: transparent;
+                    color: #717171;
+                    width: 100%;
+                    margin: 0;
+                    padding: 10px 0;
+                }
+
+                .icon {
+                    color: #4d4d4d;
+                    float: right;
+                }
+            }
+        }
+
+        .loguot {
+            float: right;
+        }
+    }
+}
+
+.dropdown.open {
+    background: #5b5b5b;
+}
+
+// Logo
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    max-height: 30px;
+
+    .logo-img {
+        width: 30px;
+        display: inline-block;
+    }
+
+    .logo-title {
+        display: inline-block;
+        padding: 0 0 0 8px;
+        vertical-align: -2px;
+        max-height: 30px;
+    }
+}
+
+// Menu
+.menu-icon {
+    background: url('../img/menu.png') center center;
+    width: 35px;
+    height: 30px;
+    float: right;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-right: 5px;
+
+    &:hover {
+        background-color: #222;
+    }
 }
 
 
 /* === Media Queries =================================================================== */
-@media (min-width: $bp-sm-min) {}
+@media (min-width: $bp-sm-min) {
+
+    // Navbar
+    .top-bar {
+
+        .top-bar-brand {
+            width: auto;
+            float: left;
+            padding-left: 5px;
+            margin-top: 2px;
+            padding: 5px 0 1px;
+        }
+
+        .top-bar-nav {
+            background: transparent;
+        }
+
+        .top-bar-item {   
+            border-left: 1px solid #2d2d2d;
+            @include boxShadow(-1px, 0, 0, #424242);
+        }
+
+    }
+
+    // Menu
+    .menu-icon {
+        display: none;
+    }
+
+}
