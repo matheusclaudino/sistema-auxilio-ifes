@@ -151,12 +151,19 @@ h6, .title-6 {
   border-left: 1px solid #3a3939;
   margin-left: -4px;
   padding: 0 8px;
+  color: #fff;
 }
 
-.dropdown {
+.top-bar-box {
   display: inline-block;
 }
-.dropdown .dropdown-toggle {
+.top-bar-box:hover {
+  background: #5b5b5b;
+}
+.top-bar-box:active {
+  background: #5b5b5b;
+}
+.top-bar-box .tb-box-item {
   display: inline-block;
   margin: 0px;
   padding: 7px 10px 7px;
@@ -164,14 +171,14 @@ h6, .title-6 {
   cursor: pointer;
   color: inherit;
 }
-.dropdown .dropdown-toggle.icon {
+.top-bar-box .tb-box-item.icon {
   vertical-align: -7px;
   padding-top: 17px;
 }
-.dropdown .dropdown-toggle .dropdown-icon {
+.top-bar-box .tb-box-item .tb-box-icon {
   font-size: 1.8rem;
 }
-.dropdown .dropdown-toggle .badge {
+.top-bar-box .tb-box-item .badge {
   position: absolute;
   top: 9px;
   right: 3px;
@@ -182,13 +189,14 @@ h6, .title-6 {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.dropdown .dropdown-toggle .user-name {
+.top-bar-box .tb-box-item .user-name {
   display: inline-block;
   padding: 0 10px 0 0;
 }
-.dropdown .dropdown-toggle .user-name .icon {
+.top-bar-box .tb-box-item .user-name .icon {
   margin-left: 5px;
 }
+
 .dropdown .dropdown-menu {
   color: #3a3939;
   font-size: 1em;

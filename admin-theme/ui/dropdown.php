@@ -1,19 +1,15 @@
-<div class="top-bar-item dropdown">
+<a href="index.php" class="top-bar-item top-bar-box">
 
-    <a href="#" class="dropdown-toggle icon"  data-toggle="dropdown">
-        <i class="fa fa-envelope dropdown-icon"></i>
+    <div class="tb-box-item icon" >
+        <i class="fa fa-envelope tb-box-icon"></i>
         <span class="badge">6</span>
-    </a>
-
-    <div class="dropdown-menu">
-      Teste
     </div>
 
-</div>
+</a>
 
-<div class="top-bar-item dropdown">
+<div class="top-bar-item top-bar-box dropdown">
 
-    <div class="dropdown-toggle"  data-toggle="dropdown">
+    <div class="tb-box-item"  data-toggle="dropdown">
         <div class="user-name">Administrador <i class="fa fa-angle-down icon"></i></div>
         <img src="img/user.png" alt="" class="user-avatar">
     </div>
