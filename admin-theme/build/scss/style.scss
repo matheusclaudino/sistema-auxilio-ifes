@@ -43,6 +43,22 @@ $bp-sm-min: 768px;
 	transition: 		all $time ease-in-out;
 }
 
+@mixin Translate3d($x: 0px, $y: 0px, $z: 0px) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    -ms-transform: translate3d($x, $y, $z);
+    -o-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z); 
+}
+
+@mixin Translate($x: 0px, $y: 0px) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y); 
+}
+
 // Opacity
 @mixin Opacity($value: 0.5){
     $aux_value: $value * 100;
@@ -143,6 +159,7 @@ body {
 	@include FontRegular();
 	font-size: $font-default;
     color: $default-font-color;
+    overflow: hidden;
 }
 
 .main {
@@ -153,6 +170,22 @@ body {
     max-width: 960px;
     margin: auto;
     padding: 0;
+}
+
+.page {
+    background: #a31;
+
+    @extend .effect;
+
+    @include Translate(0px);
+
+    backface-visibility: hidden;
+    z-index: 1;
+    position: relative;
+
+    &.menu-open {
+        @include Translate(250px);
+    }
 }
 
 
@@ -234,6 +267,10 @@ h6 {
     width: 100%;
     @include borderRadius(0);
     @extend .neutral-sty;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    z-index: 10;
 
     .top-bar-brand {
         width: 100%;
@@ -322,7 +359,8 @@ h6 {
         text-shadow: 0 0 0 #000;
         text-align: left;
         left: auto;
-        margin-top: 0;
+        margin-top: -1px;
+        margin-right: -1px;
         padding: 10px;
         left: auto;
         right: 0;
@@ -392,6 +430,11 @@ h6 {
     }
 }
 
+.content-wrapper {
+    background: #f00;
+    overflow: hidden;
+}
+
 // Menu
 .menu-icon {
     background: url('../img/menu.png') center center;
@@ -407,9 +450,66 @@ h6 {
     }
 }
 
+.menu, .content-wrapper { 
+  // -webkit-transition: 3.2s all ease;
+  //   -moz-transition: 3.2s all ease;
+  //   transition: 3.2s all ease; 
+}
+
+.menu {
+    background: #0f0;
+    overflow: hidden;
+
+    left: 0px;
+    @include Translate(-250px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    backface-visibility: hidden;
+
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    width: 250px;
+    height: 100%;
+    box-shadow: -1.5em 0px 1.5em -0.75em rgba(0, 0, 0, 0.25) inset;
+
+    z-index: 50;
+    display: block;
+}
+
+
+
+
+
 
 /* === Media Queries =================================================================== */
 @media (min-width: $bp-sm-min) {
+
+    // Page
+    .page {
+        @include Translate(0);
+        display: table;
+
+        &.menu-open {
+            @include Translate(0);
+        }
+    }
+
+    .menu {
+        @include Translate(0);
+        display: table-cell;
+        position: relative;
+    }
+
+    .content-wrapper {
+        display: table-cell;
+    }
+
 
     // Navbar
     .top-bar {

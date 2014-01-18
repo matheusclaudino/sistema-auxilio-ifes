@@ -23,7 +23,7 @@
 
                     <div class="top-bar-brand">
 
-                        <div class="menu-icon"></div>
+                        <div class="menu-icon" id="menu-toggle"></div>
                         
                         <div class="top-bar-item">
                             <?php include('/ui/logo.php') ?>
@@ -39,12 +39,21 @@
 
             </div>
 
-            <?php include('/ui/title.php') ?>
+            <div class="page" id="page">
 
-            <?php include('/ui/logo.php') ?>
+                <?php include('/ui/menu.php') ?>
 
-            Teste Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, eos, perferendis totam soluta natus impedit ab quod in porro fugit? Ab, praesentium, odit voluptatum culpa facere dicta consectetur aut voluptate?
+                <div class="content-wrapper">
 
+                    <?php include('/ui/title.php') ?>
+
+                    <?php include('/ui/logo.php') ?>
+
+                    Teste Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, eos, perferendis totam soluta natus impedit ab quod in porro fugit? Ab, praesentium, odit voluptatum culpa facere dicta consectetur aut voluptate?
+
+                </div>
+                
+            </div>
 
         </div>
         
