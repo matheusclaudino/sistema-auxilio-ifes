@@ -17,33 +17,33 @@
     </head>
     <body>
 
-        <div class="main">
+        <header class="wrapper top-bar">
 
-            <div class="top-bar">
+            <div class="top-bar-brand">
 
-                    <div class="top-bar-brand">
-
-                        <div class="menu-icon" id="menu-toggle"></div>
-                        
-                        <div class="top-bar-item">
-                            <?php include('/ui/logo.php') ?>
-                        </div>
-
-                    </div>
-
-                    <div class="top-bar-nav">
-
-                        <?php include('/ui/dropdown.php') ?>
-
-                    </div>
+                <div class="menu-icon" id="menu-toggle"></div>
+                
+                <div class="top-bar-item">
+                    <?php include('/ui/logo.php') ?>
+                </div>
 
             </div>
 
-            <div class="page" id="page">
+            <div class="top-bar-nav">
+
+                <?php include('/ui/dropdown.php') ?>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="wrapper page" id="page">
 
                 <?php include('/ui/menu.php') ?>
 
-                <div class="content-wrapper">
+                <div class="content" id="content">
 
                     <?php include('/ui/title.php') ?>
 
@@ -55,7 +55,7 @@
                 
             </div>
 
-        </div>
+        </main>
         
         <script src="js/main.min.js"></script>
 

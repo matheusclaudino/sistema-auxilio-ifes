@@ -1,3 +1,5 @@
+console.log("DevIFES ;)");
+
 $(document).ready(function() {
   
 	window.scrollTo(0, 1);
@@ -6,8 +8,6 @@ $(document).ready(function() {
 	$('#menu-toggle').click(function() {
 
 		var open = $('#page').hasClass('menu-open');
-
-		console.log(open);
 
 		if(open) {
 
@@ -19,6 +19,18 @@ $(document).ready(function() {
 
 		}
 
+    });
+
+    $('#content').click(function() {
+
+    	var open = $('#page').hasClass('menu-open');
+
+		if(open) {
+
+			$('#page').removeClass('menu-open');
+
+		}
+    	
     });
     
     

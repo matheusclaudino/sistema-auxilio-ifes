@@ -9,10 +9,10 @@
 
 
 // === Variables =============================================================================== //
-$font-default: 13px;
-
-// Colors
-$default-font-color: #3a3939;
+$font-df: 13px;
+$df-font-color: #3a3939;
+$df-border-color: #cfcfcf;
+$menu-bg: #ececec;
 
 
 // Media queries
@@ -41,14 +41,6 @@ $bp-sm-min: 768px;
 	-o-transition: 		all $time ease-in-out;
 	-ms-transition: 	all $time ease-in-out;
 	transition: 		all $time ease-in-out;
-}
-
-@mixin Translate3d($x: 0px, $y: 0px, $z: 0px) {
-    -webkit-transform: translate3d($x, $y, $z);
-    -moz-transform: translate3d($x, $y, $z);
-    -ms-transform: translate3d($x, $y, $z);
-    -o-transform: translate3d($x, $y, $z);
-    transform: translate3d($x, $y, $z); 
 }
 
 @mixin Translate($x: 0px, $y: 0px) {
@@ -157,12 +149,16 @@ $bp-sm-min: 768px;
 /* === Structure =============================================================================== */
 body {
 	@include FontRegular();
-	font-size: $font-default;
-    color: $default-font-color;
+	font-size: $font-df;
+    color: $df-font-color;
     overflow: hidden;
 }
 
-.main {
+main {
+    display: block;
+}
+
+.wrapper {
     min-width: 320px;
 }
 
@@ -173,17 +169,30 @@ body {
 }
 
 .page {
-    background: #a31;
-    @extend .effect;
-    @include Translate(0px);
-    backface-visibility: hidden;
-    z-index: 1;
-    position: absolute;
     height: 100%;
     min-height: 100%;
+    position: absolute;
+    z-index: 1;
+    backface-visibility: hidden;
+    @include Translate(0px);
+    @extend .effect;
 
     &.menu-open {
-        @include Translate(250px);
+        @include Translate(200px);
+    }
+}
+
+// Content
+.content {
+    overflow: hidden;
+
+    &:before {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
     }
 }
 
@@ -266,9 +275,6 @@ h6 {
     width: 100%;
     @include borderRadius(0);
     @extend .neutral-sty;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
     z-index: 10;
 
     .top-bar-brand {
@@ -352,7 +358,7 @@ h6 {
 .dropdown {
 
     .dropdown-menu {
-        color: $default-font-color;
+        color: $df-font-color;
         font-size: 1em;
         font-weight: normal;
         text-shadow: 0 0 0 #000;
@@ -429,11 +435,6 @@ h6 {
     }
 }
 
-.content-wrapper {
-    background: #f00;
-    overflow: hidden;
-}
-
 // Menu
 .menu-icon {
     background: url('../img/menu.png') center center;
@@ -449,41 +450,26 @@ h6 {
     }
 }
 
-.menu, .content-wrapper { 
-  // -webkit-transition: 3.2s all ease;
-  //   -moz-transition: 3.2s all ease;
-  //   transition: 3.2s all ease; 
-}
-
 .menu {
-    background: #0f0;
-    overflow: hidden;
-
+    width: 200px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0px;
     left: 0px;
-    @include Translate(-250px);
-
+    z-index: 50;
+    overflow: hidden;
+    overflow: hidden;
+    @include Translate(-200px);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-
     backface-visibility: hidden;
-
-    position: absolute;
-    overflow: hidden;
-    top: 0px;
-    width: 250px;
-    height: 100%;
-    box-shadow: -1.5em 0px 1.5em -0.75em rgba(0, 0, 0, 0.25) inset;
-
-    z-index: 50;
-    display: block;
+    background: $menu-bg;
+    border-right: 1px solid $df-border-color;
 }
-
-
-
-
 
 
 /* === Media Queries =================================================================== */
@@ -499,16 +485,17 @@ h6 {
         }
     }
 
+    // Content
+    .content {
+        display: table-cell;
+    }
+
+    // Menu
     .menu {
         @include Translate(0);
         display: table-cell;
         position: relative;
     }
-
-    .content-wrapper {
-        display: table-cell;
-    }
-
 
     // Navbar
     .top-bar {

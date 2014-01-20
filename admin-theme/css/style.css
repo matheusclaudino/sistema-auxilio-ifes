@@ -76,7 +76,11 @@ body {
   overflow: hidden;
 }
 
-.main {
+main {
+  display: block;
+}
+
+.wrapper {
   min-width: 320px;
 }
 
@@ -87,24 +91,35 @@ body {
 }
 
 .page {
-  background: #a31;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 1;
+  backface-visibility: hidden;
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
   -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  backface-visibility: hidden;
-  z-index: 1;
-  position: absolute;
-  height: 100%;
-  min-height: 100%;
 }
 .page.menu-open {
-  -webkit-transform: translate(250px, 0px);
-  -moz-transform: translate(250px, 0px);
-  -ms-transform: translate(250px, 0px);
-  -o-transform: translate(250px, 0px);
-  transform: translate(250px, 0px);
+  -webkit-transform: translate(200px, 0px);
+  -moz-transform: translate(200px, 0px);
+  -ms-transform: translate(200px, 0px);
+  -o-transform: translate(200px, 0px);
+  transform: translate(200px, 0px);
+}
+
+.content {
+  overflow: hidden;
+}
+.content:before {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 /* === Elements ================================================================================ */
@@ -287,11 +302,6 @@ h6, .title-6 {
   max-height: 30px;
 }
 
-.content-wrapper {
-  background: #f00;
-  overflow: hidden;
-}
-
 .menu-icon {
   background: url("../img/menu.png") center center;
   width: 35px;
@@ -306,28 +316,28 @@ h6, .title-6 {
 }
 
 .menu {
-  background: #0f0;
-  overflow: hidden;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0px;
   left: 0px;
-  -webkit-transform: translate(-250px, 0px);
-  -moz-transform: translate(-250px, 0px);
-  -ms-transform: translate(-250px, 0px);
-  -o-transform: translate(-250px, 0px);
-  transform: translate(-250px, 0px);
+  z-index: 50;
+  overflow: hidden;
+  overflow: hidden;
+  -webkit-transform: translate(-200px, 0px);
+  -moz-transform: translate(-200px, 0px);
+  -ms-transform: translate(-200px, 0px);
+  -o-transform: translate(-200px, 0px);
+  transform: translate(-200px, 0px);
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
   backface-visibility: hidden;
-  position: absolute;
-  overflow: hidden;
-  top: 0px;
-  width: 250px;
-  height: 100%;
-  box-shadow: -1.5em 0px 1.5em -0.75em rgba(0, 0, 0, 0.25) inset;
-  z-index: 50;
-  display: block;
+  background: #ececec;
+  border-right: 1px solid #cfcfcf;
 }
 
 /* === Media Queries =================================================================== */
@@ -348,6 +358,10 @@ h6, .title-6 {
     transform: translate(0, 0px);
   }
 
+  .content {
+    display: table-cell;
+  }
+
   .menu {
     -webkit-transform: translate(0, 0px);
     -moz-transform: translate(0, 0px);
@@ -356,10 +370,6 @@ h6, .title-6 {
     transform: translate(0, 0px);
     display: table-cell;
     position: relative;
-  }
-
-  .content-wrapper {
-    display: table-cell;
   }
 
   .top-bar .top-bar-brand {
