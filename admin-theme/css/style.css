@@ -46,7 +46,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
   box-sizing: border-box;
 }
 
-.effect, .page, a, .dropdown .dropdown-menu .dropdown-menu-list li, .dropdown .dropdown-menu .dropdown-menu-list li:hover {
+.effect, .page, a, .dropdown .dropdown-menu .dropdown-menu-list li, .dropdown .dropdown-menu .dropdown-menu-list li:hover, .menu-item {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -112,14 +112,7 @@ main {
 
 .content {
   overflow: hidden;
-}
-.content:before {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+  vertical-align: top;
 }
 
 /* === Elements ================================================================================ */
@@ -325,6 +318,7 @@ h6, .title-6 {
   z-index: 50;
   overflow: hidden;
   overflow: hidden;
+  vertical-align: top;
   -webkit-transform: translate(-200px, 0px);
   -moz-transform: translate(-200px, 0px);
   -ms-transform: translate(-200px, 0px);
@@ -338,6 +332,67 @@ h6, .title-6 {
   backface-visibility: hidden;
   background: #ececec;
   border-right: 1px solid #cfcfcf;
+}
+
+.menu-item {
+  padding: 15px 10px;
+  border-bottom: 1px solid #d0d0d0;
+  color: #4d4d4d;
+  background: #ececec;
+  background-image: linear-gradient(to bottom, #ececec, white);
+  background-image: -o-linear-gradient(bottom, #ececec, white);
+  background-image: -moz-linear-gradient(bottom, #ececec, white);
+  background-image: -webkit-linear-gradient(bottom, #ececec, white);
+  background-image: -ms-linear-gradient(bottom, #ececec, white);
+  cursor: pointer;
+  text-shadow: 0 1px 1px #fff;
+}
+.menu-item:hover {
+  background: #e0e0e0;
+  background-image: linear-gradient(to bottom, #e0e0e0, white);
+  background-image: -o-linear-gradient(bottom, #e0e0e0, white);
+  background-image: -moz-linear-gradient(bottom, #e0e0e0, white);
+  background-image: -webkit-linear-gradient(bottom, #e0e0e0, white);
+  background-image: -ms-linear-gradient(bottom, #e0e0e0, white);
+}
+.menu-item:active {
+  background: #dadada;
+}
+.menu-item .icon {
+  float: right;
+  margin-top: 3px;
+}
+
+.menu-item-dropdown ul {
+  list-style: none;
+  padding: 0;
+}
+.menu-item-dropdown .menu-dropdown {
+  display: none;
+}
+.menu-item-dropdown .menu-dropdown .item {
+  padding: 15px 10px;
+  margin-bottom: 1px;
+  display: block;
+  border-bottom: 1px solid #656565;
+  -webkit-box-shadow: 0 1px 0 #888888;
+  -moz-box-shadow: 0 1px 0 #888888;
+  box-shadow: 0 1px 0 #888888;
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+  background: #777;
+}
+.menu-item-dropdown .menu-dropdown .item:before {
+  content: "»";
+  padding-right: 5px;
+  vertical-align: 1px;
+}
+.menu-item-dropdown .menu-dropdown .item:hover {
+  padding-left: 20px;
+  background: #555;
+}
+.menu-item-dropdown .menu-dropdown.open {
+  display: block;
 }
 
 /* === Media Queries =================================================================== */

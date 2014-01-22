@@ -1,10 +1,39 @@
-<nav  class="menu" role="navigation">d
-	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Collection</a></li>
-		<li><a href="#">Blog</a></li>
-		<li><a href="#">Contact</a></li>
-		<li><a href="#">Directions</a></li>
-	</ul>
+<nav class="menu" role="navigation">
+
+	<div class="menu-item-dropdown">
+
+		<div class="menu-item">Turmas <i class="fa fa-home fa-fw fa-lg icon"></i></div>
+
+		<ul class="menu-dropdown">
+
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			
+		</ul>
+
+	</div>
+	
+	<div class="menu-item">Home <i class="fa fa-home fa-fw fa-lg icon"></i></div>
+	<div class="menu-item">Home <i class="fa fa-home fa-fw fa-lg icon"></i></div>
+	<div class="menu-item">Home <i class="fa fa-home fa-fw fa-lg icon"></i></div>
+
+	<div class="menu-item-dropdown">
+
+		<div class="menu-item">Turmas <i class="fa fa-home fa-fw fa-lg icon"></i></div>
+
+		<ul class="menu-dropdown">
+
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			<li><a class="item" href="#">Teste</a></li>
+			
+		</ul>
+
+	</div>
+
 </nav>

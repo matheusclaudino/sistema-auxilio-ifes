@@ -61,7 +61,7 @@ $bp-sm-min: 768px;
     opacity: $value;
 }
 
-// transforns
+// Transforns
 @mixin translateY($value: 0%) {
     -webkit-transform: translateY($value);
     -moz-transform: translateY($value);
@@ -69,6 +69,17 @@ $bp-sm-min: 768px;
     -ms-transform: translateY($value);
     transform: translateY($value);
 }
+
+// Gradients
+@mixin gradientToBottom($color1: #aaa, $color2: #222) {
+    background: $color1;    
+    background-image: linear-gradient(to bottom, $color1, $color2);
+    background-image: -o-linear-gradient(bottom, $color1, $color2);
+    background-image: -moz-linear-gradient(bottom, $color1, $color2);
+    background-image: -webkit-linear-gradient(bottom, $color1, $color2);
+    background-image: -ms-linear-gradient(bottom, $color1, $color2);
+}
+
 
 
 // === Fonts =================================================================================== //
@@ -185,15 +196,7 @@ main {
 // Content
 .content {
     overflow: hidden;
-
-    &:before {
-        content: ".";
-        display: block;
-        clear: both;
-        visibility: hidden;
-        line-height: 0;
-        height: 0;
-    }
+    vertical-align: top;
 }
 
 
@@ -460,6 +463,7 @@ h6 {
     z-index: 50;
     overflow: hidden;
     overflow: hidden;
+    vertical-align: top;
     @include Translate(-200px);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -469,6 +473,67 @@ h6 {
     backface-visibility: hidden;
     background: $menu-bg;
     border-right: 1px solid $df-border-color;
+}
+
+.menu-item {
+    padding: 15px 10px;
+    border-bottom: 1px solid #d0d0d0;
+    color: #4d4d4d;
+    @include gradientToBottom(#ececec, #fff);
+    @extend .effect;
+    cursor: pointer;
+    text-shadow: 0 1px 1px #fff;
+
+    &:hover {
+        @include gradientToBottom(#e0e0e0, #fff);  
+    }
+
+    &:active {
+        background: #dadada;
+    }
+
+    .icon {
+        float: right;
+        margin-top: 3px;
+    }
+}
+
+.menu-item-dropdown {
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-dropdown {
+        display: none;
+
+        .item {
+            padding: 15px 10px;
+            margin-bottom: 1px;
+            display: block;
+            border-bottom: 1px solid #656565;
+            @include boxShadow(0, 1px, 0, #888);
+            color: #fff;
+            text-shadow: 0 1px 1px #000;
+            background: #777;
+
+            &:before {
+                content: "»";
+                padding-right: 5px;
+                vertical-align: 1px;
+            }
+
+            &:hover {
+                padding-left: 20px;
+                background: #555;
+            }
+        }
+
+        &.open {
+            display: block;
+        }
+    }
 }
 
 
