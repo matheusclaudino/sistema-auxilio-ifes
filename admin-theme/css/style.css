@@ -73,7 +73,7 @@ body {
   font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #3a3939;
-  overflow: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 main {
@@ -112,6 +112,7 @@ main {
 
 .content {
   overflow: hidden;
+  padding: 20px;
   vertical-align: top;
 }
 
@@ -151,6 +152,14 @@ h5, .title-5 {
 
 h6, .title-6 {
   font-size: 1.35rem;
+}
+
+.page-title {
+  font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .top-bar {
@@ -316,8 +325,6 @@ h6, .title-6 {
   top: 0px;
   left: 0px;
   z-index: 50;
-  overflow: hidden;
-  overflow: hidden;
   vertical-align: top;
   -webkit-transform: translate(-200px, 0px);
   -moz-transform: translate(-200px, 0px);
@@ -346,6 +353,7 @@ h6, .title-6 {
   background-image: -ms-linear-gradient(bottom, #ececec, white);
   cursor: pointer;
   text-shadow: 0 1px 1px #fff;
+  text-transform: uppercase;
 }
 .menu-item:hover {
   background: #e0e0e0;
@@ -369,6 +377,7 @@ h6, .title-6 {
 }
 .menu-item-dropdown .menu-dropdown {
   display: none;
+  margin-bottom: 0;
 }
 .menu-item-dropdown .menu-dropdown .item {
   padding: 15px 10px;
@@ -393,6 +402,60 @@ h6, .title-6 {
 }
 .menu-item-dropdown .menu-dropdown.open {
   display: block;
+}
+
+.breadcrumb {
+  display: none;
+}
+
+.panel .panel-heading {
+  background: #ececec;
+  background-image: linear-gradient(to bottom, #ececec, white);
+  background-image: -o-linear-gradient(bottom, #ececec, white);
+  background-image: -moz-linear-gradient(bottom, #ececec, white);
+  background-image: -webkit-linear-gradient(bottom, #ececec, white);
+  background-image: -ms-linear-gradient(bottom, #ececec, white);
+}
+.panel .panel-heading .panel-title {
+  font-size: 1em;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.divider-single {
+  background-color: #e0dede;
+  height: 1px;
+}
+
+.footer-main {
+  text-align: center;
+}
+.footer-main .logo-wrapper {
+  padding: 10px 0 0;
+}
+.footer-main .logo-wrapper .logo {
+  height: auto;
+  max-height: none;
+  display: inline-block;
+}
+.footer-main .logo-wrapper .logo .info {
+  display: inline-block;
+}
+.footer-main .logo-wrapper .logo .logo-title {
+  display: block;
+  font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
+}
+.footer-main .logo-wrapper .logo .copyright {
+  display: block;
+}
+.footer-main .logo-wrapper .logo .logo-img {
+  float: right;
+  margin: 2px 0 0 8px;
 }
 
 /* === Media Queries =================================================================== */
@@ -446,5 +509,24 @@ h6, .title-6 {
 
   .menu-icon {
     display: none;
+  }
+
+  .breadcrumb {
+    display: block;
+    text-align: right;
+    background-color: transparent;
+  }
+
+  .footer-main {
+    text-align: left;
+  }
+  .footer-main .logo-wrapper {
+    text-align: right;
+    padding: 0 15px 0 0;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .content {
+    background: blue;
   }
 }

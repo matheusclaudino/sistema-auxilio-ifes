@@ -80,6 +80,9 @@ $bp-sm-min: 768px;
     background-image: -ms-linear-gradient(bottom, $color1, $color2);
 }
 
+// Font Smoothing
+@mixin fontSmoothing() {
+}
 
 
 // === Fonts =================================================================================== //
@@ -162,7 +165,8 @@ body {
 	@include FontRegular();
 	font-size: $font-df;
     color: $df-font-color;
-    overflow: hidden;
+    text-rendering: optimizeLegibility;
+    @include fontSmoothing();
 }
 
 main {
@@ -196,6 +200,7 @@ main {
 // Content
 .content {
     overflow: hidden;
+    padding: 20px;
     vertical-align: top;
 }
 
@@ -270,6 +275,14 @@ h6 {
 
 .title-6 {
     @extend h6;
+}
+
+.page-title {
+    @include FontBold();
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 // Navbar
@@ -461,8 +474,6 @@ h6 {
     top: 0px;
     left: 0px;
     z-index: 50;
-    overflow: hidden;
-    overflow: hidden;
     vertical-align: top;
     @include Translate(-200px);
     -webkit-backface-visibility: hidden;
@@ -483,6 +494,7 @@ h6 {
     @extend .effect;
     cursor: pointer;
     text-shadow: 0 1px 1px #fff;
+    text-transform: uppercase;
 
     &:hover {
         @include gradientToBottom(#e0e0e0, #fff);  
@@ -507,6 +519,7 @@ h6 {
 
     .menu-dropdown {
         display: none;
+        margin-bottom: 0;
 
         .item {
             padding: 15px 10px;
@@ -533,6 +546,70 @@ h6 {
         &.open {
             display: block;
         }
+    }
+}
+
+// Breadcrumb
+.breadcrumb {
+    display: none;
+}
+
+// Panels
+.panel {
+
+    .panel-heading {
+        @include gradientToBottom(#ececec, #fff);
+
+        .panel-title {
+            font-size: 1em;
+            text-shadow: 0 1px 1px #fff;
+        }
+    }
+}
+
+// Dividers
+.divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.divider-single {
+    background-color: #e0dede;
+    height: 1px;
+}
+
+// Fotter
+.footer-main {
+    text-align: center;
+
+    .logo-wrapper {
+        padding: 10px 0 0;
+
+        .logo {
+            height: auto;
+            max-height: none;
+            display: inline-block;
+
+            .info {
+                display: inline-block;
+            }
+
+            .logo-title {
+                display: block;
+                @include FontBold();
+            }
+
+            .copyright {
+                display: block;
+            }
+
+            .logo-img {
+                float: right;
+                margin: 2px 0 0 8px;
+            }
+        }
+
     }
 }
 
@@ -589,4 +666,45 @@ h6 {
         display: none;
     }
 
+    // Breadcrumb
+    .breadcrumb {
+        display: block;
+        text-align: right;
+        background-color: transparent;
+    }
+
+    // Fotter
+    .footer-main {
+        text-align: left;
+
+        .logo-wrapper {
+            text-align: right;
+            padding: 0 15px 0 0;
+
+            .logo {
+
+                .info {
+                }
+
+                .logo-title {
+                }
+
+                .copyright {
+                }
+
+                .logo-img {
+                }
+            }
+        }
+    }
+
+}
+
+.content {
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+.content {
+background: blue;
+}
 }
