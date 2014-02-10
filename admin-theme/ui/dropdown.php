@@ -9,9 +9,9 @@
 
 <div class="top-bar-item top-bar-box dropdown">
 
-    <div class="tb-box-item"  data-toggle="dropdown">
-        <div class="user-name">Administrador <i class="fa fa-angle-down icon"></i></div>
-        <img src="img/user.png" alt="" class="user-avatar">
+    <div class="tb-box-item" data-toggle="dropdown">
+        <img src="img/user.png" alt="" class="user-image">
+        <img src="img/user.png" alt="" class="user-image">
     </div>
 
     <div class="dropdown-menu">

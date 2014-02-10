@@ -24,14 +24,14 @@
                 <div class="menu-icon" id="menu-toggle"></div>
                 
                 <div class="top-bar-item">
-                    <?php include('/ui/logo.php') ?>
+                    <?php include('ui/logo.php') ?>
                 </div>
 
             </div>
 
             <div class="top-bar-nav">
 
-                <?php include('/ui/dropdown.php') ?>
+                <?php include('ui/dropdown.php') ?>
 
             </div>
 
@@ -41,7 +41,7 @@
 
             <div class="wrapper page" id="page">
 
-                <?php include('/ui/menu.php') ?>
+                <?php include('ui/menu.php') ?>
 
                 <div class="content" id="content">
 

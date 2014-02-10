@@ -339,6 +339,7 @@ h6 {
         position: relative;
         cursor: pointer;
         color: inherit;
+        background: #0f0;
 
         &.icon {
             vertical-align: -7px;
@@ -360,6 +361,7 @@ h6 {
         }
 
         .user-name {
+            background: #f00;
             display: inline-block;
             padding: 0 10px 0 0;
             
@@ -367,8 +369,15 @@ h6 {
                 margin-left: 5px;
             }
         }
+
+        .user-image {
+            display: inline-block;
+            background: #0ff;
+        }
     }
 }
+
+
 
 // Dropdown
 .dropdown {
@@ -448,6 +457,7 @@ h6 {
         padding: 0 0 0 8px;
         vertical-align: -2px;
         max-height: 30px;
+        white-space: pre;
     }
 }
 
