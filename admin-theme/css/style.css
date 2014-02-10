@@ -46,6 +46,27 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
   box-sizing: border-box;
 }
 
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
 .effect, .page, a, .dropdown .dropdown-menu .dropdown-menu-list li, .dropdown .dropdown-menu .dropdown-menu-list li:hover, .menu-item {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -91,7 +112,6 @@ main {
 }
 
 .page {
-  height: 100%;
   min-height: 100%;
   position: absolute;
   z-index: 1;
@@ -210,7 +230,6 @@ h6, .title-6 {
   position: relative;
   cursor: pointer;
   color: inherit;
-  background: #0f0;
 }
 .top-bar-box .tb-box-item.icon {
   vertical-align: -7px;
@@ -231,7 +250,6 @@ h6, .title-6 {
   border-radius: 50%;
 }
 .top-bar-box .tb-box-item .user-name {
-  background: #f00;
   display: inline-block;
   padding: 0 10px 0 0;
 }
@@ -240,7 +258,6 @@ h6, .title-6 {
 }
 .top-bar-box .tb-box-item .user-image {
   display: inline-block;
-  background: #0ff;
 }
 
 .dropdown .dropdown-menu {

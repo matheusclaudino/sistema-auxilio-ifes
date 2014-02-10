@@ -10,7 +10,7 @@
 <div class="top-bar-item top-bar-box dropdown">
 
     <div class="tb-box-item" data-toggle="dropdown">
-        <img src="img/user.png" alt="" class="user-image">
+        <div class="user-name">Administrador <i class="fa fa-angle-down icon"></i></div>
         <img src="img/user.png" alt="" class="user-image">
     </div>
 
