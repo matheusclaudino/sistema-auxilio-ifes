@@ -14,6 +14,9 @@
         <!-- Style -->
         <link rel="stylesheet" href="css/style.min.css">
 
+        <!-- Modernizr -->
+        <script src="lib/js/modernizr.js"></script>
+
     </head>
     <body>
 
