@@ -1,5 +1,5 @@
 -- -----------------------------------------------------
--- Table curso
+-- CURSO
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS curso (
   curso_id INT NOT NULL AUTO_INCREMENT,
