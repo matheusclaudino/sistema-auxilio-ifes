@@ -10,7 +10,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table turma
+-- TURMA
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS turma (
   turma_id INT NOT NULL AUTO_INCREMENT,
