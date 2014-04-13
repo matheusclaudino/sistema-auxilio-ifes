@@ -1,37 +1,27 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Familiar
- *
- * @author 2012122760136
- */
 class Familiar {
-    //put your code here
-     private $familiar_id;
- private  $aluno_id;
- private  $nome;
- private  $idade;
- private  $estado_civil;
- private  $parentesco;
- private  $situacao;
- private  $situacao_empregaticia;
- private  $profissao;
- private  $salario;
- private  $pensao;
- private  $tipo_escola;
- private  $mensalidade;
- private  $gastos;
- private  $tipo_doenca;
- private  $faz_tratamento;
- private  $usa_medicamento;
- private  $deficiente;
- private  $viciado;
- 
+   
+	 private $familiar_id;
+	 private  $aluno_id;
+	 private  $nome;
+	 private  $idade;
+	 private  $estado_civil;
+	 private  $parentesco;
+	 private  $situacao;
+	 private  $situacao_empregaticia;
+	 private  $profissao;
+	 private  $salario;
+	 private  $pensao;
+	 private  $tipo_escola;
+	 private  $mensalidade;
+	 private  $gastos;
+	 private  $tipo_doenca;
+	 private  $faz_tratamento;
+	 private  $usa_medicamento;
+	 private  $deficiente;
+	 private  $viciado;
+	 
  function __construct($familiar_id, $aluno_id, $nome, $idade, $estado_civil, $parentesco, $situacao, $situacao_empregaticia, $profissao, $salario, $pensao, $tipo_escola, $mensalidade, $gastos, $tipo_doenca, $faz_tratamento, $usa_medicamento, $deficiente, $viciado) {
      $this->familiar_id = $familiar_id;
      $this->aluno_id = $aluno_id;

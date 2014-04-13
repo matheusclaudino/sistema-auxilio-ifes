@@ -1,18 +1,7 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Curso
- *
- * @author 2012122760136
- */
 class Curso {
 
-    //put your code here
     private $curso_id;
     private $nome;
     private $periodo;

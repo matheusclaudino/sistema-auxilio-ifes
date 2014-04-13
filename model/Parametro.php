@@ -1,17 +1,7 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Parametro
- *
- * @author 2012122760136
- */
 class Parametro {
-    //put your code here
+
     private $parametro_id;
     private $nome;
     private $valor;

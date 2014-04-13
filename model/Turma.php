@@ -1,18 +1,7 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Turma
- *
- * @author 2012122760136
- */
 class Turma {
 
-    //put your code here
     private $turma_id;
     private $curso_id;
     private $nome;

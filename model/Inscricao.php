@@ -1,18 +1,7 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Inscricao
- *
- * @author 2012122760136
- */
 class Inscricao {
 
-    //put your code here
     private $aluno_id;
     private $processo_id;
     private $turma_id;

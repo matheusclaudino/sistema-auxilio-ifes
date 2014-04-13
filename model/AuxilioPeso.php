@@ -1,17 +1,7 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of AuxilioPeso
- *
- * @author 2012122760136
- */
 class AuxilioPeso {
-    //put your code here
+   
     private $criterio_id;
     private $auxilio_id;
     private $auxilio_id;

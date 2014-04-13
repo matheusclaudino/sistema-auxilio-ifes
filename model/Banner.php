@@ -1,18 +1,8 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of Banner
- *
- * @author 2012122760136
- */
 class Banner {
 
-    //put your code here
     private $banner_id;
     private $titulo;
     private $imagem;

@@ -1,17 +1,8 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of Criterio
- *
- * @author 2012122760136
- */
 class Criterio {
-    //put your code here
+  
     private $criterio_id;
     private $nome;
     
