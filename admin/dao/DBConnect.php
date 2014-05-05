@@ -3,7 +3,7 @@
 	try{
 
 	    // Faz conexão com banco de daddos
-	    $pdo = new PDO("mysql:host=127.0.0.1;dbname=glauco_blog_tutorials_db;", "root", "");
+	    $pdo = new PDO("mysql:host=127.0.0.1;dbname=sistema_auxilio;", "root", "");
 
 	} catch(PDOException $e){
 
