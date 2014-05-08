@@ -4,6 +4,8 @@
         
         use Model\Fields;
         
+        use Control\usuarioControl;
+        
         
         
         $fields = array();
@@ -18,6 +20,8 @@
                             'type' => 'text'
                     );
         
-        Fields::startFields( $fields );
+       // Fields::startFields( $fields );
+        
+       usuarioControl::iniciarCampos();
 
 ?>
