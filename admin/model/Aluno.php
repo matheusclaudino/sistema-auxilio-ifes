@@ -6,6 +6,7 @@ class Aluno {
 
     private $aluno_id;
     private $nome;
+    private $matricula;
     private $email;
     private $senha;
     private $rg;
@@ -70,6 +71,7 @@ class Aluno {
     private $saude_oculos;
     private $saude_recebe_medicamento;
     private $saude_medicamento_gastos;
+    private $acesso;
 
     function __construct($aluno_id, $nome, $email, $senha, $rg, $cpf, $turma_id, $data_nascimento, $sexo, $naturalidade, $etnia, $estado_civil, $endereco, $cidade, $bairro, $uf, $cep, $ponto_referencia, $telefone, $telefone_trabalho, $celular, $procedencia, $proveniencia, $bolsa_estudos, $bolsa_estudos_porcentagem, $renda, $renda_percapita, $acompanhamento, $conta_bancaria_id, $hb_habitacao, $hb_valor, $hb_pessoa_responsavel, $hb_telefone_contato, $hb_tipo_habitacao, $hb_natureza_vinculo, $hb_natureza_vinculo_valor, $hb_qtd_comodos, $hb_computador, $hb_internet, $hb_gasto_agua, $hb_gasto_luz, $hb_gasto_telefone, $hb_gasto_emprestimo, $hb_gasto_prestacoes, $hb_gasto_celular, $hb_gasto_alimentacao, $hb_gasto_mensalidades, $hb_gasto_condominio, $hb_gasto_outros, $ep_atividade_complementar, $ep_trabalha, $ep_trabalhou, $ep_vinculo_trabalhista, $ep_funcao, $ep_outras_rendas, $ep_procedencia, $banco_conta, $banco_agencia, $banco_operacao, $banco_numero, $saude_convenio, $saude_convenio_valor, $saude_dificuldade_enxergar, $saude_oculos, $saude_recebe_medicamento, $saude_medicamento_gastos) {
         $this->aluno_id = $aluno_id;
@@ -146,6 +148,14 @@ class Aluno {
 
     public function setAluno_id($aluno_id) {
         $this->aluno_id = $aluno_id;
+    }
+    
+    public function getMatricula() {
+        return $this->matricula;
+    }
+
+    public function setMatricula($matricula) {
+        $this->matricula = $matricula;
     }
 
     public function getNome() {
@@ -666,6 +676,14 @@ class Aluno {
 
     public function setSaude_medicamento_gastos($saude_medicamento_gastos) {
         $this->saude_medicamento_gastos = $saude_medicamento_gastos;
+    }
+    
+    public function getAcesso() {
+        return $this->acesso;
+    }
+
+    public function setAcesso($acesso) {
+        $this->acesso = $acesso;
     }
 
 }
