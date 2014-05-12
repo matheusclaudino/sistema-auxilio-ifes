@@ -4,23 +4,34 @@ use Model\Auxilio;
 use Dao\AuxilioDAO;
 
 class ControladoraAuxilio {
-
+    private $auxiliodao;
     function __construct() {
-        
+        $this->auxiliodao = new AuxilioDAO();
     }    
     
-    public function inserirAuxilio($nome) {
+    public function insertAuxilio($nome) {
        $auxilio = new Auxilio($nome);
-       $persiste = new AuxilioDAO();
-       $persiste->inserir($auxilio);
+       $auxiliodao->insert($auxilio);
     }
    
-    public function consultarAuxilio($idAuxilio, $nome) {
-        
+    public function consultAuxilio($auxilioPesquisado) {
+        $auxiliodao->consult($auxilioPesquisado);
+    }
+    public function updateAuxilio($id, $nome){
+        $auxilio = new Auxilio($nome);
+        $auxilio->setIdAuxilio($id);
+        $auxiliodao->update($auxilio);    
+    }
+    public function disableAuxilio($id, $nome) {
+        $auxilio = new Auxilio($nome);
+        $auxilio->setIdAuxilio($id);
+        $auxiliodao->disable($auxilio);
     }
 
-        public function inativarAuxilio($idAuxilio, $nome) {
-        
+    public function deleteAuxilio($id, $nome){
+        $auxilio = new Auxilio($nome);
+        $auxilio->setIdAuxilio($id);
+        $auxiliodao->delete($auxilio);
     }
 }
 
