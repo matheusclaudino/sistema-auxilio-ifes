@@ -1,8 +1,4 @@
 <?php
-/**
- * Classe controladora do auxilio.
- */
-
 require_once 'autoload.php';
 use Model\Auxilio;
 use Dao\AuxilioDAO;
@@ -10,6 +6,9 @@ use Dao\AuxilioDAO;
 class ControladoraAuxilio {
     private $auxiliodao;
     
+    /**
+     * Classe controladora do auxilio
+     */
     function __construct() {
         $this->auxiliodao = new AuxilioDAO();
     }    

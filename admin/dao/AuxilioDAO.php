@@ -31,6 +31,7 @@ class AuxilioDAO {
     public function delete(Auxilio $auxilio){
         
     }
+    
 }
 
 ?>
