@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Aluno {
 
     private $aluno_id;
