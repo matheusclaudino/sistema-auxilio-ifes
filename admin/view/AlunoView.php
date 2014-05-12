@@ -1,29 +1,17 @@
 <?php
 
-        require_once( '../autoload.php' );
-        
-        use Model\Fields;
-        
-        
-        
-        $fields = array();
-        
-        $fields[] = array(  'name' => 'Nome do aluno',
-                            'type' => 'text'
-                    );
-        $fields[] = array(  'name' => 'Nome do aluno',
-                            'type' => 'text'
-                    );
-        $fields[] = array(  'name' => 'Nome do aluno',
-                            'type' => 'text'
-                    );
-        $fields[] = array(  'name' => 'Senha',
-                            'type' => 'password'
-                    );
-        $fields[] = array(  'name' => 'Cadastrar',
-                            'type' => 'submit'
-                    );
-        
-        Fields::startFields( $fields );
+require_once( '../autoload.php' );
 
+use Control\AlunoControl as ctr;
+
+$option = $_POST['option'];
+$name = $_POST['name'];
+
+switch ($option):
+
+    case 1:
+        echo 'ok'.$name;
+        ctr::insert($name);
+
+endswitch;
 ?>

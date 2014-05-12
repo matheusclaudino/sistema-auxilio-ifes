@@ -20,8 +20,12 @@ class AlunoDao {
     private $table = 'aluno';
 
     public function insert(Aluno $aluno) {
+        
+        echo 'teste';
+        
+        $con = new DBConnect();
 
-        $stmt = $dbh->prepare("INSERT INTO $this->table (matricula, nome, email, senha, rg, cpf, turma_id, data_nascimento, sexo, naturalidade, etnia, estado_civil, endereco, cidade, bairro, uf, cep, ponto_referencia, telefone, telefone_trabalho, celular, acesso) VALUES (:matricula, :nome, :email, :senha, :rg, :cpf, :turma_id, :data_nascimento, :sexo, :naturalidade, :etnia, :estado_civil, :endereco, :cidade, :bairro, :uf, :cep, :ponto_referencia, :telefone, :telefone_trabalho, :celular, :acesso)");
+        $stmt = $con->prepare("INSERT INTO $this->table (matricula, nome, email, senha, rg, cpf, turma_id, data_nascimento, sexo, naturalidade, etnia, estado_civil, endereco, cidade, bairro, uf, cep, ponto_referencia, telefone, telefone_trabalho, celular, acesso) VALUES (:matricula, :nome, :email, :senha, :rg, :cpf, :turma_id, :data_nascimento, :sexo, :naturalidade, :etnia, :estado_civil, :endereco, :cidade, :bairro, :uf, :cep, :ponto_referencia, :telefone, :telefone_trabalho, :celular, :acesso)");
         $stmt->bindParam(':matricula', $aluno->getMatricula());
         $stmt->bindParam(':nome', $aluno->getNome());
         $stmt->bindParam(':email', $aluno->getEmail());
@@ -45,7 +49,7 @@ class AlunoDao {
         $stmt->bindParam(':celular', $aluno->getCelular());
         $stmt->bindParam(':acesso', $aluno->getAcesso());
 
-        $stmt->execute();
+        //$stmt->execute();
     }
 
 }
