@@ -3,6 +3,7 @@
 namespace Control;
 
 use Dao\DBConnect;
+use View\MainView;
 
 /**
  * Controlador da aplicação, esse participante receberá as
@@ -14,7 +15,7 @@ class Application {
      * O método start iniciará a aplicação e manipulará a requisição do usuário conforme adequado.
      */
     public static function start() {
-        
+
         /**
          * @var Connector Objeto de conexão
          */
@@ -28,14 +29,20 @@ class Application {
         /**
          * Realiza a construção da página de acordo com a requisição do usuário.
          */
-        switch ($userAction) {
+        switch ($userAction):
             case 'aluno':
-
+                header('location: View/AlunoView.php?nome=Luiz');
                 break;
             case 'home':
             default:
-        }
+                $view = new MainView();
+                $view->testMainView();
+        endswitch;
+        
+        $view->show("Luiz");
+        
     }
+
 }
 
 ?>

@@ -1,17 +1,22 @@
-<?php
+<!doctype html>
+<html lang="pt-br">
+    <head>
 
-require_once( '../autoload.php' );
+        <meta charset="UTF-8">
+        <title>Painel</title>
+        <meta name="description" content="Painel do sistema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-use Control\AlunoControl as ctr;
+    </head>
+    <body>
 
-$option = $_POST['option'];
-$name = $_POST['name'];
+        <?php
+        
+            $nome = $_GET['nome'];
+            
+            echo '<h1>'.$nome.'</h1>';
+        
+        ?>
 
-switch ($option):
-
-    case 1:
-        echo 'ok'.$name;
-        ctr::insert($name);
-
-endswitch;
-?>
+    </body>
+</html>
