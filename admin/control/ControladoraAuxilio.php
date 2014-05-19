@@ -1,4 +1,5 @@
 <?php
+namespace Control;
 require_once 'autoload.php';
 use Model\Auxilio;
 use Dao\AuxilioDAO;
@@ -20,7 +21,7 @@ class ControladoraAuxilio {
      */
     public function insertAuxilio($nome) {
        $auxilio = new Auxilio($nome);
-       $auxiliodao->insert($auxilio);
+       $this->auxiliodao->insert($auxilio);
     }
    
     /**
@@ -29,7 +30,7 @@ class ControladoraAuxilio {
      * @param string $auxilioPesquisado    Nome do auxílio pesquisado.
      */
     public function consultAuxilio($auxilioPesquisado) {
-        $auxiliodao->consult($auxilioPesquisado);
+        $this->auxiliodao->consult($auxilioPesquisado);
     }
     
     /**
@@ -41,7 +42,7 @@ class ControladoraAuxilio {
     public function updateAuxilio($id, $nome){
         $auxilio = new Auxilio($nome);
         $auxilio->setIdAuxilio($id);
-        $auxiliodao->update($auxilio);    
+        $this->auxiliodao->update($auxilio);    
     }
     
     /**
@@ -53,7 +54,7 @@ class ControladoraAuxilio {
     public function disableAuxilio($id, $nome) {
         $auxilio = new Auxilio($nome);
         $auxilio->setIdAuxilio($id);
-        $auxiliodao->disable($auxilio);
+        $this->auxiliodao->disable($auxilio);
     }
     
     /**
@@ -65,7 +66,7 @@ class ControladoraAuxilio {
     public function deleteAuxilio($id, $nome){
         $auxilio = new Auxilio($nome);
         $auxilio->setIdAuxilio($id);
-        $auxiliodao->delete($auxilio);
+        $this->auxiliodao->delete($auxilio);
     }
 }
 
