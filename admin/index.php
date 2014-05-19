@@ -1,5 +1,6 @@
 <?php
         
+<<<<<<< HEAD
 	require_once( 'autoload.php' );
         
         use Model\Fields;
@@ -29,5 +30,8 @@
        // Fields::startFields( $fields );
         
        usuarioControl::iniciarCampos();
+=======
+	
+>>>>>>> a33ddcbbca6d3e52c5ef8ad64c5b15085025e6e8
 
 ?>
