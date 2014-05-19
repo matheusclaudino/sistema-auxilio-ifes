@@ -125,15 +125,8 @@ class usuarioControl {
             "id" => "cargo",
             "type" => "text"
         );
-        
-         Fields::startFields( $this->fields );
+  
     }
-    
-    public function preencherCampos(Usuario $usuario){
-        $usuario->setNome($nome);
-        
-    }
-
 }
 
 
