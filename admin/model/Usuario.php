@@ -25,6 +25,10 @@
             private $cargo;
 
 //CONSTRUTOR
+            function __construct(){
+                
+            }
+            
             function __construct ($idAcesso, $nome, $email, $senha, $rg, $cpf, 
                     $naturalidade, $etnia, $estadoCivil, $dataNascimento, $endereco, 
                     $cidade, $bairro, $uf, $cep, $pontoReferencia, $telefone, $celular, $cargo){

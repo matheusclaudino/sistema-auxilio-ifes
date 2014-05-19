@@ -24,9 +24,9 @@ class UsuarioDao {
         
     }
     
-    public function inserir(Usuario $usuario){
+    public static function insert(Usuario $usuario){
       
-        $con = new DBconnect;
+        $con = new DBconnect();
         
         $stmt = $con->prepare("INSERT INTO $this->table (nome, email, senha, rg, cpf, naturaliade, etnia, estadoCivil, DataNascimento,
                 endereco, cidade, bairro, uf, cep, pontoReferencia, telefone, celular, cargo)
@@ -51,7 +51,64 @@ class UsuarioDao {
         $stmt->bindParam(':telefone', $usuario->getTelefone());
         $stmt->bindParam(':celular', $usuario->getCelular());
         $stmt->bindParam(':cargo', $usuario->getCargo());
+        
+        //$stmt->execute();
          
+    }
+    
+    public static function delete(Usuario $usuario){
+        $con = new DBconnect(); 
+        $stmt = $con->prepare("DELETE FROM usuario WHERE idUsuario =".$usuario->getIdUsuario());
+       
+        //$stmt->execute();
+    }
+    
+    /*
+      private $idUsuario;
+            private $idAcesso;//estrangeira
+            private $nome; 
+            private $email;
+            private $senha;
+            private $rg; 
+            private $cpf;
+            private $naturalidade;
+            private $etnia;
+            private $estadoCivil;
+            private $dataNascimento;
+            private $endereco;
+            private $cidade;
+            private $bairro;
+            private $uf;
+            private $cep;
+            private $pontoReferencia;
+            private $telefone;
+            private $celular;
+            private $cargo;
+     */
+       
+    public static function update(Usuario $usuario){
+        $con = new DBconnect();
+        $stmt = $cont->prepare("UPDATE usuario SET nome =".$usuario->getNome()
+                ."email =".$usuario->getEmail()
+                ."senha =".$usuario->getSenha()
+                ."rg =".$usuario->getRg()
+                ."cpf =".$usuario->getCpf()
+                ."naturalidade =".$usuario->getNaturalidade()
+                ."etnia =".$usuario->getEtnia()
+                ."estadoCivil".$usuario->getEstadoCivil()
+                ."DataNascimento".$usuario->getDataNascimento()
+                ."endereco".$usuario->getEndereco()
+                ."cidade".$usuario->getCidade()
+                ."bairro".$usuario->getBairro()
+                ."uf".$usuario->getUf()
+                ."cep".$usuario->getCep()
+                ."pontoReferencia".$usuario->getPontoReferencia()
+                ."telefone".$usuario->getTelefone()
+                ."celular".$usuario->getCelular()
+                ."cargo".$usuario->getCargo()
+                );
+        
+        //$stmt->execute();
     }
     
 }
