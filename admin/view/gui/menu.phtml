@@ -1,22 +1,24 @@
 <nav class="menu" role="navigation">
 
 	<div class="menu-item-dropdown">
-
 		<div class="menu-item">Painel <i class="fa fa-home fa-fw fa-lg icon"></i></div>
-
 		<ul class="menu-dropdown">
-
-			<li><a class="item" href="#">Painel</a></li>
-			<li><a class="item" href="#">Alunos</a></li>
+			<li><a class="item" href="<?= ADMIN_URL ?>">Painel</a></li>
+			<li><a class="item" href="?action=aluno">Alunos</a></li>
 			<li><a class="item" href="#">Auxílios</a></li>
 			<li><a class="item" href="#">Processos</a></li>
 			<li><a class="item" href="#">Resultados</a></li>
-			
 		</ul>
+	</div>
 
+	<div class="menu-item-dropdown">
+		<div class="menu-item">Aluno <i class="fa fa-user fa-fw fa-lg icon"></i></div>
+		<ul class="menu-dropdown">
+			<li><a class="item" href="?action=aluno">Gerenciar alunos</a></li>
+			<li><a class="item" href="?action=aluno">Cadastrar aluno</a></li>
+		</ul>
 	</div>
 	
-	<div class="menu-item">Alunos <i class="fa fa-user fa-fw fa-lg icon"></i></div>
 	<div class="menu-item">Auxílios <i class="fa fa-cutlery fa-fw fa-lg icon"></i></div>
 	<div class="menu-item">Processos <i class="fa fa-file-text fa-fw fa-lg icon"></i></div>
 
