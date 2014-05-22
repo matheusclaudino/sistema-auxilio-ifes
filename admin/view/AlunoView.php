@@ -46,7 +46,7 @@
 
                 <div class="col-sm-12">
                     
-                    <?php Util\Fields::startFields($args) ?>
+                    <?php Util\Fields::startFields($args, 'view/AlunoProcess.php?action=c', 'POST') ?>
 
                 </div>
                 
