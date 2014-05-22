@@ -1,18 +1,16 @@
-<?php
+<!doctype html>
+<html lang="pt-br">
+    <head>
 
-namespace View;
+        <meta charset="UTF-8">
+        <title>Painel</title>
+        <meta name="description" content="Painel do sistema">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-use View\AbstractView;
+    </head>
+    <body>
 
-/**
- * Implementação da View principal.
- */
-class MainView extends AbstractView {
-    
-    public function testMainView() {
-        echo 'test ok!';
-    }
-    
-}
+        Main
 
-?>
+    </body>
+</html>

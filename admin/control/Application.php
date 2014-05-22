@@ -3,7 +3,6 @@
 namespace Control;
 
 use Dao\DBConnect;
-use View\MainView;
 
 /**
  * Controlador da aplicação, esse participante receberá as
@@ -31,15 +30,12 @@ class Application {
          */
         switch ($userAction):
             case 'aluno':
-                header('location: View/AlunoView.php?nome=Luiz');
+                require_once '/../view/AlunoView.php';
                 break;
             case 'home':
             default:
-                $view = new MainView();
-                $view->testMainView();
+                require_once '/../view/MainView.php';
         endswitch;
-        
-        $view->show("Luiz");
         
     }
 

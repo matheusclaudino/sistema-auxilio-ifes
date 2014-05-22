@@ -10,13 +10,7 @@
     </head>
     <body>
 
-        <?php
-        
-            $nome = $_GET['nome'];
-            
-            echo '<h1>'.$nome.'</h1>';
-        
-        ?>
+        Aluno
 
     </body>
 </html>
