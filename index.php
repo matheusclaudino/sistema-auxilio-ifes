@@ -20,17 +20,17 @@
     {
         
         $campos = $campos.$campo.',';
-        $values = $values.':'.$campo.',';
+        
         
     }
     
     $campos = substr($campos, 0,-1);
     $values = substr($values, 0,-1);
     
-     echo '<br>';
 
-     echo '$stmt = $con->prepare(INSERT INTO.$this->table.('.$campos.')VALUES('.$values.')';
-      echo '<br>';
+
+     echo '$stmt = $con->prepare(UPDATE $this->table SET('.$campos.')VALUES('.$values.')';
+     
 
      foreach ($dados as $campo => $valor):
 
