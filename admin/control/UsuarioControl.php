@@ -13,10 +13,12 @@ use Model\Usuario;
 use Dao\UsuarioDao;
 
 class usuarioControl {
-    
-    
+$table = 'usuario';
+
    public function insert(Usuario $usuario){
-       usuarioDao::insert($usuario);      
+   $dados[] = array(  'idAcesso' => $usuario->,
+                            'type' => 'text'
+        DefaultDao::insert($dados);      
    }
    
    public function delete(Usuario $usuario){

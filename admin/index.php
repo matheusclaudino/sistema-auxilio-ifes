@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
         
 <<<<<<< HEAD
 	require_once( 'autoload.php' );
@@ -33,5 +34,13 @@
 =======
 	
 >>>>>>> a33ddcbbca6d3e52c5ef8ad64c5b15085025e6e8
+=======
+
+require_once 'autoload.php';
+
+use Control\Application;
+
+Application::start();
+>>>>>>> d80f2cc0efaa81c670317ca6597c8c18752cb92e
 
 ?>
