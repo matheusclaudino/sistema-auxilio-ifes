@@ -464,6 +464,11 @@ h6 {
     vertical-align: middle;
     height: 30px;
     max-height: 30px;
+    color: #fff;
+
+    &:hover {
+        color: #fff;
+    }
 
     .logo-img {
         width: 30px;
@@ -618,6 +623,7 @@ h6 {
             height: auto;
             max-height: none;
             display: inline-block;
+            color: #3a3939;
 
             .info {
                 display: inline-block;
