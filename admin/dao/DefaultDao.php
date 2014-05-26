@@ -1,40 +1,40 @@
 <?php
 
-class DefaultDao {
+class DefaultDao{
     
-    private $table;// $con;
+    private $con;
     
- // $con = new DBConnect();
-    
-  
-    public function Insert($dados, $con){
-         
-       foreach ($dados as $dado):
-           
-            $stmt = $con->prepare("INSERT INTO".$this->table."(".$dados['key'].")VALUES(:".$dado['value'].")");
-           
-       endforeach;
-         
-        foreach ($dados as $dado):
-            
-            $stmt->bindParam(':'.$dados['key'], $dado['value']);
-            echo ($dado['value']);
-        endforeach;
-        
-        //$stmt->execute();
+    function __construct($con) {
+        $this->con = $con;
+    }
+   
+   public function insert($dados, $table){
+    $campos = "";
+    $values = "";
+
+        foreach($dados as $campo => $valor)
+        {
+
+            $campos = $campos.$campo.',';
+            $values = $values.':'.$campo.',';
+
+        }
+
+        $campos = substr($campos, 0,-1);
+        $values = substr($values, 0,-1);
+
+        $stmt = $con->prepare("INSERT INTO $table ( $campos )VALUES ( $values )");
+
+         foreach ($dados as $campo => $valor){
+             $stmt->bindParam(':'.$campo,$valor);     
+         }
+
+        $stmt->execute();
+   
     }
 
 }
 
-$con = new DBConnect();
- $dados = array();
- $dados[] = array(  '1' => 'VALOR1',
-                    '2' => 'VALOR2',
-                    '3' => 'VALOR3',
-                    '4' => 'VALOR4',
-                    '5' => 'VALOR5',
-                    '6' => 'VALOR6'
-                );
- $variavel = new DefaultDao();
- $variavel->Insert($dados, $con);
- 
+?>
+
+
