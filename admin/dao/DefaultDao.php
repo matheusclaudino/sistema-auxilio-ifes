@@ -13,18 +13,15 @@ class DefaultDao{
     }
    
    public function insert($dados){
-    $campos = "";
-    $values = "";
+
+        $campos = "";
+        $values = "";
     
         $con = new DBConnect();
-        
 
-        foreach($dados as $campo => $valor)
-        {
-
+        foreach($dados as $campo => $valor) {
             $campos = $campos.$campo.',';
             $values = $values.':'.$campo.',';
-
         }
 
         $campos = substr($campos, 0,-1);
@@ -41,7 +38,36 @@ class DefaultDao{
         echo 'ok';
    
     }
+    
+    public function update($dados, $table){
+        
+        $campos = "";
+        
+        foreach($dados as $campo => $valor){
+             $campos = $campos.$campo.' = :'.$campo.',';
+          }
+        $campos = substr($campos, 0, -1);
 
+        $stmt = $con->prepare("UPDATE $table.' SET($campos) WHERE $table.id = :id");
+
+        foreach($dados as $campo => $valor ){
+
+          $stmt->bindParam(':'.$campo,$valor);                          
+        }
+        
+       $stmt->execute();
+         
+    }
+    
+    public function delete($dados, $table){
+        
+        $con->prepare("DELETE FROM $table WHERE $table.id = :id");
+	 
+        $stmt->bindParam(":id", $dados['id']);
+         
+        $stmt->execute();
+    }  
+    
 }
 
 ?>
