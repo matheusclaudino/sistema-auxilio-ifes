@@ -16,6 +16,7 @@ Class DBConnect {
         $pswd = "";
 
         $this->pdo = new PDO(sprintf('mysql:host=%s;dbname=%s', $host, $dbname), $user, $pswd);
+        
     }
 
 }
