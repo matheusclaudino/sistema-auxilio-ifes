@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Autoload
+ */
+require_once '/../autoload.php';
+
+/**
  * Página inicial da área de administração
  */
 define("ADMIN_URL", "http://localhost/sistema-auxilio-ifes/admin/");

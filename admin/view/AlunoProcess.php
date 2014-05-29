@@ -13,8 +13,7 @@ $userAction = isset($_GET['action']) ? $_GET['action'] : 'c';
 /**
  * Controladora
  */
-require_once '/../control/AlunoControl.php';
-$ctr = new Control\AlunoControl();
+$ctr = new Control\DefaultControl();
 
 switch ($userAction):
     case 'c':
