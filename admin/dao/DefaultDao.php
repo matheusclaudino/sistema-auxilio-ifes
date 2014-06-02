@@ -1,75 +1,85 @@
 <?php
 
 namespace DAO;
+use Util\DBConnect;
 
-use Dao\DBConnect;
+require_once ('../Util/DBConnect.php');
 
-class DefaultDao{
-    
+class DefaultDao {
+
     private $table;
-            
-    function __construct() {
-        
-    }
-   
-   public function insert($dados){
 
-        $campos = "";
-        $values = "";
-    
-        $con = new DBConnect();
+    public function insert($dados, $table) {
 
-        foreach($dados as $campo => $valor) {
-            $campos = $campos.$campo.',';
-            $values = $values.':'.$campo.',';
+        try {
+
+            $campos = "";
+            $values = "";
+
+            $table = DBConnect::getTabela($table);
+
+            foreach($dados as $campo => $valor) {
+                $campos = $campos.$campo.', ';
+                $values = $values.':'.$campo.', ';
+            }
+
+           $campos = substr($campos, 0, -2);
+           $values = substr($values, 0, -2);
+
+           $con = DBConnect::getInstance(); 
+           $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
+
+           $stmt = $con->prepare("INSERT INTO $table ( $campos )VALUES ( $values )");
+
+           // http://stackoverflow.com/questions/4174524/binding-params-for-pdo-statement-inside-a-loop
+           foreach ($dados as $campo => &$valor) {
+                $stmt->bindParam( ':'.$campo, $valor);
+           }
+
+           $stmt->execute();
+
+        } catch(PDOException $e) { 
+            echo 'Error: ' . $e->getMessage();
         }
 
-        $campos = substr($campos, 0,-1);
-        $values = substr($values, 0,-1);
-
-        $stmt = $this->con->prepare("INSERT INTO $this->table ( $campos )VALUES ( $values )");
-
-         foreach ($dados as $campo => $valor){
-             $stmt->bindParam(':'.$campo,$valor);     
-         }
-
-        //$stmt->execute();
-         
-        echo 'ok';
-   
     }
-    
-    public function update($dados, $table){
-        
+
+    public function update($dados, $table) {
+
         $campos = "";
-        
-        foreach($dados as $campo => $valor){
-             $campos = $campos.$campo.' = :'.$campo.',';
-          }
+
+        foreach ($dados as $campo => $valor) {
+            $campos = $campos . $campo . ' = :' . $campo . ',';
+        }
         $campos = substr($campos, 0, -1);
 
         $stmt = $con->prepare("UPDATE $table.' SET($campos) WHERE $table.id = :id");
 
-        foreach($dados as $campo => $valor ){
+        foreach ($dados as $campo => $valor) {
 
-          $stmt->bindParam(':'.$campo,$valor);                          
+            $stmt->bindParam(':' . $campo, $valor);
+        }
+
+        $stmt->execute();
+    }
+
+    public function delete($dados, $table) {
+
+        $con->prepare("DELETE FROM $table WHERE $table.id = :id");
+
+        $stmt->bindParam(":id", $dados['id']);
+
+        $stmt->execute();
+    }
+
+    public function select() {
+
+        $con = DBConnect::getInstance();
+        $query = $con->query("SELECT * FROM " . DBConnect::getTabela('TB_CURSO') . " ORDER BY nome");
+        foreach ($query->fetchAll(\PDO::FETCH_ASSOC) as $usuario) {
+            echo $usuario['nome'] . '<br>';
         }
         
-       $stmt->execute();
-         
     }
-    
-    public function delete($dados, $table){
-        
-        $con->prepare("DELETE FROM $table WHERE $table.id = :id");
-	 
-        $stmt->bindParam(":id", $dados['id']);
-         
-        $stmt->execute();
-    }  
-    
+
 }
-
-?>
-
-
