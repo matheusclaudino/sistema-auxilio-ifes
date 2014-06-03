@@ -23,14 +23,15 @@ switch ($userAction):
         
         // Array de dados
         $args = array();
+
         foreach ($field_datas as $field => $value):
-        	$args[] = array($value['id'] => $_POST[ $value['id'] ]);
+            $args[ $value['id'] ] = $_POST[ $value['id'] ];
         endforeach;
         
-        $ctr->insert($args);
+        $ctr->insert($args, "TB_ALUNO");
+
+        header ("location: ".ADMIN_URL);
         
         break;
     default:
 endswitch;
-
-
