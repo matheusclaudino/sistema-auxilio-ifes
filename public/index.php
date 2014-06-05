@@ -2,7 +2,8 @@
 <?php  include 'header.php' ?>
 
   <?php  include 'slide.php' ?>
-<?php use Dao\DBConnect ?>;
+<?php use Util\DBConnect;?>
+
   <section class="col-xs-12 content-main">
 
     <div class="jumbotron-main">
@@ -26,12 +27,11 @@
               <div class="title">
 
                 <h2>
-                    <?php/*
-                        $consulta = $pdo->prepare("SELECT nome FROM parametro where id = :id;");
-                        $consulta->bindParam(':id', $id);
-                        $consulta->execute();
-                        $linha = $consulta->fetch(PDO::FETCH_ASSOC);
-                    */?>
+                    <?php
+                        $table = "parametro";
+                        $db = new PDO();
+                        $count = current($db->query("SELECT * FROM $table")->fetch());
+                    ?>
                 </h2>
 
               </div>
