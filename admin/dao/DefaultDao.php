@@ -3,7 +3,7 @@
 namespace DAO;
 use Util\DBConnect;
 
-require_once ('../Util/DBConnect.php');
+// require_once ('../Util/DBConnect.php');
 
 class DefaultDao {
 
@@ -72,13 +72,30 @@ class DefaultDao {
         $stmt->execute();
     }
 
-    public function select() {
+    /**
+     * Select genérico
+     * 
+     * @param string $sql String sql
+     **/
+    public function select($sql) {
 
         $con = DBConnect::getInstance();
-        $query = $con->query("SELECT * FROM " . DBConnect::getTabela('TB_CURSO') . " ORDER BY nome");
-        foreach ($query->fetchAll(\PDO::FETCH_ASSOC) as $usuario) {
-            echo $usuario['nome'] . '<br>';
+
+        $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        // executa a instrução SQL
+        $statement = $con->prepare($sql);
+
+        $statement->execute();
+
+        $result = array();
+
+        // Query results
+        while ( $row = $statement->fetch(\PDO::FETCH_ASSOC) ) {
+            $result[] = $row; // print $row;
         }
+        
+        return $result;
         
     }
 

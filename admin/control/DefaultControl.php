@@ -16,4 +16,8 @@ class DefaultControl {
         $this->dao->insert($args, $table);
     }
 
+    public function select($sql) {
+    	return $this->dao->select($sql);
+    }
+
 }
