@@ -1,16 +1,11 @@
-
 <?php  include 'header.php' ?>
-<?php  include 'slide.php' ?>
-<?php 
-      //use Control\DefaultControl;
-      //$ctr = new DefaultControl();
-?>
 
-<<<<<<< HEAD
-=======
   <?php  include 'slide.php' ?>
-<?php use Dao\DBConnect; ?>
->>>>>>> luiz_remote/master
+<?php 
+    use Dao\DBConnect; 
+    use Admin\Control\DefaultControl;
+    $ctr = new DefaultControl();
+?>
   <section class="col-xs-12 content-main">
 
     <div class="jumbotron-main">
@@ -35,9 +30,13 @@
 
                 <h2>
                     <?php
-                        //$resultado = $ctr->select("SELECT * FROM parametro");
-                    ?>
-                </h2>
+                        $resultado = $ctr->select("SELECT nome FROM parametro WHERE parametro_id = 1"); 
+                     ?>
+                            <p><?php echo '<pre>';
+                            print_r( $resultado );
+                        echo '</pre>'; ?></p>
+
+                   </h2>
 
               </div>
 
@@ -69,7 +68,12 @@
 
               <div class="title">
 
-                <h2>Nome</h2>
+                <h2><?php
+                        $resultado = $ctr->select("SELECT nome FROM parametro WHERE parametro_id = 2"); 
+                     ?>
+                            <p><?php echo '<pre>';
+                            print_r( $resultado );
+                        echo '</pre>'; ?></p></h2>
 
               </div>
 
@@ -99,7 +103,12 @@
 
               <div class="title">
 
-                <h2>Nome</h2>
+                <h2><?php
+                        $resultado = $ctr->select("SELECT nome FROM parametro WHERE parametro_id = 3"); 
+                     ?>
+                            <p><?php echo '<pre>';
+                            print_r( $resultado );
+                        echo '</pre>'; ?></p></h2>
 
               </div>
 
@@ -125,7 +134,12 @@
 
               <div class="title">
 
-                <h2>Nome</h2>
+                <h2><?php
+                        $resultado = $ctr->select("SELECT nome FROM parametro WHERE parametro_id = 4"); 
+                     ?>
+                            <p><?php echo '<pre>';
+                            print_r( $resultado );
+                        echo '</pre>'; ?></p></h2>
 
               </div>
 
