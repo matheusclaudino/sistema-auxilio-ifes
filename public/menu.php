@@ -17,7 +17,7 @@
       <li class="sty-green-3"><a href="#">Auxílios</a></li>
       <li class="sty-green-3"><a href="#">Editais</a></li>
       <li class="sty-green-3"><a href="faq.php">F.A.Q.</a></li>
-      <li class="sty-green-3"><a href="contato.php">Contato</a></li>
+      <li class="sty-green-3"><a href="contato">Contato</a></li>
       <li class="sty-green-3"><a href="#">Faça o seu cadastro</a></li>
       <li class="sty-green-3"><a href="ui.php">User Interface</a></li>
       <li class="sty-green-3"><a href="forms.php">Formulários</a></li>

@@ -13,7 +13,7 @@ define("ADMIN_URL", "http://localhost/sistema-auxilio-ifes/admin/");
 /**
  * Pasta do tema usado
  */
-define("THEME_PATH", "admin/skin/admin/");
+define("THEME_PATH", "skin/admin/");
 
 /**
  * Aluno attributes
