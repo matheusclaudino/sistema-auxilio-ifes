@@ -11,11 +11,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Icons -->
-        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="apple-touch-icon" href="public/img/apple-touch-icon.png">
+        <link rel="shortcut icon" href="public/img/favicon.ico">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="public/css/style.css">
 
     </head>
     <body>
@@ -28,7 +28,7 @@
                  
                  <div class="col-xs-12 col-sm-5 logo">
                      
-                   <a href="index.php"><img src="img/logo-auxilio.png" alt="Auxílio IFES"></a>
+                   <a href="index.php"><img src="public/img/logo-auxilio.png" alt="Auxílio IFES"></a>
                    <!-- Index -->
                    <!-- <h1>Auxílio IFES</h1> -->
                    <!-- Outras páginas -->

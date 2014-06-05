@@ -1,8 +1,8 @@
 <?php
 
-namespace Control;
+namespace Admin\Control;
 
-use DAO\DefaultDao;
+use Admin\DAO\DefaultDao;
 
 class DefaultControl {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Control;
+namespace Admin\Control;
 
 /**
  * Controlador da aplicação, esse participante receberá as
@@ -28,9 +28,12 @@ class Application {
             case 'aluno':
                 require_once '/../view/AlunoView.php';
                 break;
+            case 'admin':
+                require_once '/../view/MainView.php';
+                break;
             case 'home':
             default:
-                require_once '/../view/MainView.php';
+                require_once '/../../public/index.php';
         endswitch;
         
     }

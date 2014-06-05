@@ -1,4 +1,4 @@
-<?php View\DefaultView::getHead(); ?>
+<?php Admin\View\DefaultView::getHead(); ?>
 
 <header class="wrapper top-bar">
 

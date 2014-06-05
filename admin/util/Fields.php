@@ -3,7 +3,7 @@
  * Classe geradora de campos automáticos.
  */
 
-namespace Util;
+namespace Admin\Util;
 
 Class Fields {
 

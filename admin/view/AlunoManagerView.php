@@ -1,8 +1,8 @@
 <?php require_once 'gui/header.php'; 
 
     // Controladora
-    use Control\DefaultControl;
-    $ctr = new DefaultControl();
+    use Admin\Control\AlunoControl;
+    $ctr = new AlunoControl();
 
 ?>
 
@@ -24,7 +24,15 @@
 
                 <div class="col-sm-12">
 
-                    <?php $rs = $ctr->select("SELECT * FROM aluno"); ?>
+                    <?php $list = $ctr->getAllAluno(); ?>
+
+                    <?php foreach ($list as $aluno): ?>
+
+                        <p><?php echo '<pre>';
+                            print_r( $aluno );
+                        echo '</pre>'; ?></p>
+
+                    <?php endforeach; ?>
 
                 </div>
                 

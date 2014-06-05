@@ -6,6 +6,11 @@
       //$ctr = new DefaultControl();
 ?>
 
+<<<<<<< HEAD
+=======
+  <?php  include 'slide.php' ?>
+<?php use Dao\DBConnect; ?>
+>>>>>>> luiz_remote/master
   <section class="col-xs-12 content-main">
 
     <div class="jumbotron-main">

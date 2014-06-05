@@ -14,10 +14,7 @@
       </div> <!-- /.main -->
 
       <!-- Scripts -->
-      <script src="js/main.min.js"></script>
-
-      <!-- Livereload -->
-      <script src="http://localhost:35729/livereload.js"></script>
+      <script src="public/js/main.min.js"></script>
 
     </body>
 </html>
