@@ -1,4 +1,4 @@
-<IfModule mod_rewrite.c>
+﻿<IfModule mod_rewrite.c>
 	RewriteEngine On
 
 	# Extensões .php
@@ -12,5 +12,12 @@
 
 	# Página dgerenciar aluno
 	RewriteRule ^admin/alunos/?$ admin/index.php?page=gerenciar-alunos [NC,L]
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteRule ^contato/?$ public/contato.php [NC,L]
 
 </IfModule>

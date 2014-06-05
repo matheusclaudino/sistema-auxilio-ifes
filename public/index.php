@@ -1,7 +1,8 @@
+
 <?php  include 'header.php' ?>
 
   <?php  include 'slide.php' ?>
-
+<?php use Dao\DBConnect ?>;
   <section class="col-xs-12 content-main">
 
     <div class="jumbotron-main">
@@ -24,13 +25,26 @@
 
               <div class="title">
 
-                <h2>Nome</h2>
+                <h2>
+                    <?php/*
+                        $consulta = $pdo->prepare("SELECT nome FROM parametro where id = :id;");
+                        $consulta->bindParam(':id', $id);
+                        $consulta->execute();
+                        $linha = $consulta->fetch(PDO::FETCH_ASSOC);
+                    */?>
+                </h2>
 
               </div>
 
               <div class="description">
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, necessitatibus minima vero laudantium vel. Odit, quisquam sapiente perferendis iusto tempora ad pariatur eos repellendus nostrum deserunt molestias at voluptates ut?</p>
+                 
+                <p> 
+                    <?php 
+                    /*
+                        $sql = "SELECT valor FROM parametro WHERE id = 1";
+                        $query = mysql_query($sql);
+                    */?>
+                </p>
 
               </div>
 

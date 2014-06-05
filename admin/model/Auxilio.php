@@ -1,16 +1,17 @@
 <?php
+namespace Model;
 
 class Auxilio {
-//ATRIBUTOS
     private $idAuxilio;
     private $nome;
+    private $status;
     
-//CONSTRUTOR
     function __construct($nome) {
         $this->nome = $nome;
+        $this->status = true;
     }
-    
-//MÉTODOS
+
+
     public function getIdAuxilio() {
         return $this->idAuxilio;
     }
@@ -26,6 +27,15 @@ class Auxilio {
     public function setNome($nome) {
         $this->nome = $nome;
     }
+    
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
 
 
 
