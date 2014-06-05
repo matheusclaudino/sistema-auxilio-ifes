@@ -1,8 +1,8 @@
 <?php
-namespace Control;
+namespace Admin\Control;
 require_once 'autoload.php';
-use Model\Auxilio;
-use Dao\AuxilioDAO;
+use Admin\Model\Auxilio;
+use Admin\Dao\AuxilioDAO;
 
 class ControladoraAuxilio {
     private $auxiliodao;

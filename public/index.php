@@ -2,7 +2,7 @@
 <?php  include 'header.php' ?>
 
   <?php  include 'slide.php' ?>
-<?php use Dao\DBConnect ?>;
+<?php use Dao\DBConnect; ?>
   <section class="col-xs-12 content-main">
 
     <div class="jumbotron-main">

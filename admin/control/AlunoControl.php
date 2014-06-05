@@ -1,6 +1,6 @@
 <?php
 
-namespace Control;
+namespace Admin\Control;
 
 class AlunoControl extends DefaultControl {
 

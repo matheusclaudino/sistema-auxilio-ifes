@@ -1,7 +1,7 @@
 <?php require_once 'gui/header.php'; 
 
     // Controladora
-    use Control\AlunoControl;
+    use Admin\Control\AlunoControl;
     $ctr = new AlunoControl();
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-namespace DAO;
-use Util\DBConnect;
+namespace Admin\DAO;
+use Admin\Util\DBConnect;
 
 // require_once ('../Util/DBConnect.php');
 

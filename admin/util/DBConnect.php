@@ -1,6 +1,6 @@
 <?php
 
-namespace Util;
+namespace Admin\Util;
 
 /**
  * Classe Singleton para conexao ao banco de dados
