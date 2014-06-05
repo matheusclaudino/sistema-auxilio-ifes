@@ -1,8 +1,10 @@
 
 <?php  include 'header.php' ?>
-
-  <?php  include 'slide.php' ?>
-<?php use Util\DBConnect;?>
+<?php  include 'slide.php' ?>
+<?php 
+      //use Control\DefaultControl;
+      //$ctr = new DefaultControl();
+?>
 
   <section class="col-xs-12 content-main">
 
@@ -28,9 +30,7 @@
 
                 <h2>
                     <?php
-                        $table = "parametro";
-                        $db = new PDO();
-                        $count = current($db->query("SELECT * FROM $table")->fetch());
+                        //$resultado = $ctr->select("SELECT * FROM parametro");
                     ?>
                 </h2>
 
