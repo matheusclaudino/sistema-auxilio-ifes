@@ -1,7 +1,7 @@
 <?php
 
-require_once 'admin/util/config.php';
+// require_once 'admin/util/config.php';
 
-use Admin\Control\Application;
+// use Admin\Control\Application;
 
-Application::start();
+// Application::start();
