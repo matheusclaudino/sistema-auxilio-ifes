@@ -8,7 +8,7 @@
 
     <div class="col-sm-6">
     	<?php
-			require 'view/breadcrumb.php';;
+			require 'util/breadcrumb.php';;
 			$breadcrumb = new breadcrumb;
 			echo $breadcrumb->show_breadcrumb();
 		?>
