@@ -1,3 +1,9 @@
+<?php
+
+    // Configurações
+    require_once 'util/config.php';
+
+?>
 <!doctype html>
 <html lang="pt-br">
     <head>
