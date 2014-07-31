@@ -15,3 +15,26 @@
     </div>
 
 </div>
+
+<div class="row">
+    
+    <div class="com-sm-12">
+        
+         <?php 
+
+            $args = unserialize(ALUNO_FIELDS);
+
+            $args[] = array(
+                'name' => 'Cadastrar',
+                'id' => 'cadastrar',
+                'type' => 'submit'
+            );
+         
+            require_once 'util/Fields.php';
+            Fields::startFields($args, 'process/aluno-process.php', 'POST');
+
+        ?>
+
+    </div>
+
+</div>

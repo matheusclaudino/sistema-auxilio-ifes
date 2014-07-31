@@ -1,9 +1,7 @@
 <?php
 
-namespace Admin\DAO;
-use Admin\Util\DBConnect;
 
-// require_once ('../Util/DBConnect.php');
+require_once '../util/DBConnect.php';
 
 class DefaultDao {
 
@@ -44,59 +42,59 @@ class DefaultDao {
 
     }
 
-    public function update($dados, $table) {
+    // public function update($dados, $table) {
 
-        $campos = "";
+    //     $campos = "";
 
-        foreach ($dados as $campo => $valor) {
-            $campos = $campos . $campo . ' = :' . $campo . ',';
-        }
-        $campos = substr($campos, 0, -1);
+    //     foreach ($dados as $campo => $valor) {
+    //         $campos = $campos . $campo . ' = :' . $campo . ',';
+    //     }
+    //     $campos = substr($campos, 0, -1);
 
-        $stmt = $con->prepare("UPDATE $table.' SET($campos) WHERE $table.id = :id");
+    //     $stmt = $con->prepare("UPDATE $table.' SET($campos) WHERE $table.id = :id");
 
-        foreach ($dados as $campo => $valor) {
+    //     foreach ($dados as $campo => $valor) {
 
-            $stmt->bindParam(':' . $campo, $valor);
-        }
+    //         $stmt->bindParam(':' . $campo, $valor);
+    //     }
 
-        $stmt->execute();
-    }
+    //     $stmt->execute();
+    // }
 
-    public function delete($dados, $table) {
+    // public function delete($dados, $table) {
 
-        $con->prepare("DELETE FROM $table WHERE $table.id = :id");
+    //     $con->prepare("DELETE FROM $table WHERE $table.id = :id");
 
-        $stmt->bindParam(":id", $dados['id']);
+    //     $stmt->bindParam(":id", $dados['id']);
 
-        $stmt->execute();
-    }
+    //     $stmt->execute();
+    // }
 
-    /**
-     * Select genérico
-     * 
-     * @param string $sql String sql
-     **/
-    public function select($sql) {
+    // /**
+    //  * Select genérico
+    //  * 
+    //  * @param string $sql String sql
+    //  **/
+    // public function select($sql) {
 
-        $con = DBConnect::getInstance();
+    //     $con = DBConnect::getInstance();
 
-        $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+    //     $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        // executa a instrução SQL
-        $statement = $con->prepare($sql);
+    //     // executa a instrução SQL
+    //     $statement = $con->prepare($sql);
 
-        $statement->execute();
+    //     $statement->execute();
 
-        $result = array();
+    //     $result = array();
 
-        // Query results
-        while ( $row = $statement->fetch(\PDO::FETCH_ASSOC) ) {
-            $result[] = $row; // print $row;
-        }
+    //     // Query results
+    //     while ( $row = $statement->fetch(\PDO::FETCH_ASSOC) ) {
+    //         $result[] = $row; // print $row;
+    //     }
         
-        return $result;
+    //     return $result;
         
-    }
+    // }
 
 }

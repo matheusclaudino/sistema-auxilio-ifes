@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Autoload
+ * Pasta root
  */
-require_once 'autoload.php';
+define("PATH_ROOT", "http://localhost/sistema-auxilio-ifes/");
 
 /**
  * Página inicial da área de administração
