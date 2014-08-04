@@ -1,15 +1,10 @@
 <?php
 
-
 require_once __ROOT__.'/admin/util/DBConnect.php';
 
-class DefaultDao {
+class Dao {
 
-    /**
-     * $main_table Tabela principal da classe
-     * @var string
-     */
-    protected $main_table;
+    private $main_table;
 
     public function insert($dados, $table) {
 
@@ -51,12 +46,12 @@ class DefaultDao {
      * @param  int $id Identificação do registro
      * @return boolean 
      */
-    public function delete($id) {
+    public function delete($id, $table) {
         
         try {
 
             //Recupera o nome da tabela
-            $table = DBConnect::getTabela($this->main_table);
+            $table = DBConnect::getTabela($table);
 
             //DB
             $con = DBConnect::getInstance(); 
@@ -102,6 +97,11 @@ class DefaultDao {
         
         return $result;
         
+    }
+
+    public function getAll($table) {
+        $table = DBConnect::getTabela($table);
+        return $this->select("SELECT * FROM ".$table);
     }
 
 }

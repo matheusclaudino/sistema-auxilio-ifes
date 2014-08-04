@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Controladora
+ * Inicializando core
  */
-require_once __ROOT__.'/admin/control/AlunoControl.php';
-$ctr = new AlunoControl();
+require_once __ROOT__.'/admin/core/Core.php';
+$core = new Core();
 
 /**
  * Lista de alunos cadastrados 
  */
-$lista_alunos = $ctr->getAllAluno();
+$lista_alunos = $core->getAll('TB_ALUNO');
 
 ?>
 <div class="row">
@@ -45,7 +45,10 @@ $lista_alunos = $ctr->getAllAluno();
                 <td><?= $aluno['aluno_id'] ?></td>
                 <td><?= $aluno['matricula'] ?></td>
                 <td><?= $aluno['nome'] ?></td>
-                <td><a href="<?= __ALUNO_PROCESS__ ?>?action=deletar&id=<?= $aluno['aluno_id'] ?>">Excluir</a></td>
+                <td>
+                    <a href="<?= __ALUNO_PROCESS__ ?>?action=editar&id=<?= $aluno['aluno_id'] ?>">Editar</a>
+                    <a href="<?= __ALUNO_PROCESS__ ?>?action=deletar&id=<?= $aluno['aluno_id'] ?>">Excluir</a>
+                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>

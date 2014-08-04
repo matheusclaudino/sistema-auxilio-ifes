@@ -6,10 +6,15 @@
 require_once '../util/config.php';
 
 /**
- * Controladora
+ * Core
  */
-require_once '../control/AlunoControl.php';
-$ctr = new AlunoControl();
+require_once '../core/Core.php';
+$core = new Core();
+
+/**
+ * Table reference
+ */
+$table_reference = 'TB_ALUNO';
 
 /**
  * Ação do usuário
@@ -31,10 +36,20 @@ if ( !empty( $_GET['action'] ) ) {
 			endforeach;
 
 			// Insere os dados
-			$ctr->insert($args, "TB_ALUNO");
+			$core->insert($args, $table_reference);
 
 			// Redireciona a página
 			header ("location: ../aluno.php?c=1");
+			break;
+
+		case 'editar':
+
+			// ID
+			if( !empty($_GET['id']) ) {
+				$id = $_GET['id'];
+			}
+
+			echo "$id";
 			break;
 
 		case 'deletar':
@@ -45,7 +60,7 @@ if ( !empty( $_GET['action'] ) ) {
 			}
 
 			// Deleta o registro
-			$ctr->delete($id);
+			$core->delete($id, $table_reference);
 
 			// Redireciona a página
 			header ("location: ../aluno.php?d=1");
