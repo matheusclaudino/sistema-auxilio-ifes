@@ -21,4 +21,8 @@ foreach ($field_datas as $field => $value):
 	$args[ $value['id'] ] = $_POST[ $value['id'] ];
 endforeach;
 
+// Insere os dados
 $ctr->insert($args, "TB_ALUNO");
+
+// Redireciona a página
+header ("location: ../aluno.php?c=1");

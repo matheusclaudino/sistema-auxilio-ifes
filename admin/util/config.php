@@ -120,14 +120,14 @@ $args = array();
     //     'id' => 'senha',
     //     'type' => 'text'
     // );
-    // $args[] = array(
-    //     'name' => 'Turma ID',
-    //     'id' => 'turma_id',
-    //     'type' => 'text'
-    // );
-    // $args[] = array(
-    //     'name' => 'Ficha ID',
-    //     'id' => 'ficha_id',
-    //     'type' => 'text'
-    // );
+    $args[] = array(
+        'name' => 'Turma ID',
+        'id' => 'turma_id',
+        'type' => 'text'
+    );
+    $args[] = array(
+        'name' => 'Ficha ID',
+        'id' => 'ficha_id',
+        'type' => 'text'
+    );
 define ("ALUNO_FIELDS", serialize ( $args ));
