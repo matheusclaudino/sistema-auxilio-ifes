@@ -1,7 +1,7 @@
 <?php
 
 
-require_once '../util/DBConnect.php';
+require_once __ADMIN__.'/util/DBConnect.php';
 
 class DefaultDao {
 
@@ -70,31 +70,31 @@ class DefaultDao {
     //     $stmt->execute();
     // }
 
-    // /**
-    //  * Select genérico
-    //  * 
-    //  * @param string $sql String sql
-    //  **/
-    // public function select($sql) {
+    /**
+     * Select genérico
+     * 
+     * @param string $sql String sql
+     **/
+    public function select($sql) {
 
-    //     $con = DBConnect::getInstance();
+        $con = DBConnect::getInstance();
 
-    //     $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-    //     // executa a instrução SQL
-    //     $statement = $con->prepare($sql);
+        // executa a instrução SQL
+        $statement = $con->prepare($sql);
 
-    //     $statement->execute();
+        $statement->execute();
 
-    //     $result = array();
+        $result = array();
 
-    //     // Query results
-    //     while ( $row = $statement->fetch(\PDO::FETCH_ASSOC) ) {
-    //         $result[] = $row; // print $row;
-    //     }
+        // Query results
+        while ( $row = $statement->fetch(\PDO::FETCH_ASSOC) ) {
+            $result[] = $row; // print $row;
+        }
         
-    //     return $result;
+        return $result;
         
-    // }
+    }
 
 }
