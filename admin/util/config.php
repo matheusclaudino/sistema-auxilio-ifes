@@ -3,17 +3,12 @@
 /**
  * Pasta root
  */
-define("PATH_ROOT", "http://localhost/sistema-auxilio-ifes/");
+define('__ROOT__', dirname(dirname(dirname(__FILE__)))); 
 
 /**
  * Página inicial da área de administração
  */
-define("ADMIN_URL", "http://localhost/sistema-auxilio-ifes/admin/");
-
-/**
- * Pasta do tema usado
- */
-define("THEME_PATH", "skin/admin/");
+define("__ADMIN__", __ROOT__."\admin");
 
 /**
  * Aluno attributes
