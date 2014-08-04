@@ -1,6 +1,6 @@
 <?php
 
-require_once __ADMIN__.'/dao/DefaultDao.php';
+require_once __ROOT__.'/admin/dao/DefaultDao.php';
 
 class DefaultControl {
 

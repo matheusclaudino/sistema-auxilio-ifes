@@ -3,7 +3,7 @@
 /**
  * Controladora
  */
-require_once __ADMIN__.'/control/AlunoControl.php';
+require_once __ROOT__.'/admin/control/AlunoControl.php';
 $ctr = new AlunoControl();
 
 /**
@@ -36,6 +36,7 @@ $lista_alunos = $ctr->getAllAluno();
                 <th>ID</th>
                 <th>Matrícula</th>
                 <th>Nome</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@ $lista_alunos = $ctr->getAllAluno();
                 <td><?= $aluno['aluno_id'] ?></td>
                 <td><?= $aluno['matricula'] ?></td>
                 <td><?= $aluno['nome'] ?></td>
+                <td><a href="<?= __ALUNO_PROCESS__ ?>?action=deletar&id=<?= $aluno['aluno_id'] ?>">Excluir</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

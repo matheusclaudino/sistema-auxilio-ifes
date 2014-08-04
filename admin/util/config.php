@@ -8,7 +8,13 @@ define('__ROOT__', dirname(dirname(dirname(__FILE__))));
 /**
  * Página inicial da área de administração
  */
-define("__ADMIN__", __ROOT__."\admin");
+
+
+/**
+ * Mapeamento de arquivos 
+ */
+define("__ADMIN__", "http://localhost/sistema-auxilio-ifes/admin");
+define('__ALUNO_PROCESS__', __ADMIN__."/process/aluno-process.php");
 
 /**
  * Aluno attributes

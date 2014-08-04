@@ -1,11 +1,15 @@
 <?php
 
 
-require_once __ADMIN__.'/util/DBConnect.php';
+require_once __ROOT__.'/admin/util/DBConnect.php';
 
 class DefaultDao {
 
-    private $table;
+    /**
+     * $main_table Tabela principal da classe
+     * @var string
+     */
+    protected $main_table;
 
     public function insert($dados, $table) {
 
@@ -42,33 +46,36 @@ class DefaultDao {
 
     }
 
-    // public function update($dados, $table) {
+    /**
+     * delete Deleta um registro no banco
+     * @param  int $id Identificação do registro
+     * @return boolean 
+     */
+    public function delete($id) {
+        
+        try {
 
-    //     $campos = "";
+            //Recupera o nome da tabela
+            $table = DBConnect::getTabela($this->main_table);
 
-    //     foreach ($dados as $campo => $valor) {
-    //         $campos = $campos . $campo . ' = :' . $campo . ',';
-    //     }
-    //     $campos = substr($campos, 0, -1);
+            //DB
+            $con = DBConnect::getInstance(); 
+            $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
 
-    //     $stmt = $con->prepare("UPDATE $table.' SET($campos) WHERE $table.id = :id");
+            $stmt = $con->prepare("DELETE FROM $table WHERE aluno_id=:id");
 
-    //     foreach ($dados as $campo => $valor) {
+            $stmt->bindParam( ':id', $id);
 
-    //         $stmt->bindParam(':' . $campo, $valor);
-    //     }
+            $stmt->execute();
 
-    //     $stmt->execute();
-    // }
+            return true;
 
-    // public function delete($dados, $table) {
+        } catch(PDOException $e) { 
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
 
-    //     $con->prepare("DELETE FROM $table WHERE $table.id = :id");
-
-    //     $stmt->bindParam(":id", $dados['id']);
-
-    //     $stmt->execute();
-    // }
+    }
 
     /**
      * Select genérico

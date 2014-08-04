@@ -31,7 +31,7 @@
             );
          
             require_once 'util/Fields.php';
-            Fields::startFields($args, 'process/aluno-process.php', 'POST');
+            Fields::startFields($args, 'process/aluno-process.php?action=cadastrar', 'POST');
 
         ?>
 
