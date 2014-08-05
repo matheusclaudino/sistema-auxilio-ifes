@@ -14,6 +14,10 @@ class Core {
         $this->dao->insert($args, $table);
     }
 
+    public function update($id, $args, $table) {
+        $this->dao->update($id, $args, $table);
+    }
+
     public function select($sql) {
     	return $this->dao->select($sql);
     }
@@ -29,6 +33,10 @@ class Core {
      */
     public function delete($id, $table) {
         return $this->dao->delete($id, $table);
+    }
+
+    public function get($id, $table) {
+        return $this->dao->get($id, $table);
     }
 
 }

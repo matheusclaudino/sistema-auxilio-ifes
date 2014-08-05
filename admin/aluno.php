@@ -12,6 +12,16 @@
 			case 'cadastrar':
 				require_once 'include/aluno-cadastrar.php';
 				break;
+
+			case 'editar':
+
+				if( !empty( $_GET['id']) ) {
+					require_once 'include/aluno-editar.php';
+				} else {
+					// 404
+				}
+				
+				break;
 			
 			default:
 				// 404

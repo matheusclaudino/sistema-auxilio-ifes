@@ -49,7 +49,38 @@ if ( !empty( $_GET['action'] ) ) {
 				$id = $_GET['id'];
 			}
 
-			echo "$id";
+			// Redireciona a página
+			header ("location: ../aluno.php?action=editar&id=".$id);
+
+			break;
+
+		case 'salvar':
+
+			// ID
+			if( !empty($_GET['id']) ) {
+
+				$id = $_GET['id'];
+
+				// Array de campos
+				$field_datas = unserialize(ALUNO_FIELDS);
+
+				// Array de dados
+				$args = array();
+
+				foreach ($field_datas as $field => $value):
+					$args[ $value['id'] ] = $_POST[ $value['id'] ];
+				endforeach;
+
+				echo "<pre>";
+				print_r($args);
+				echo "</pre>";
+
+				echo " ------------------------------ END PROCESS <br><br><br>";
+
+				// Insere os dados
+				$core->update($id, $args, $table_reference);
+			}
+
 			break;
 
 		case 'deletar':
