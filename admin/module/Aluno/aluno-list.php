@@ -46,8 +46,8 @@ $lista_alunos = $core->getAll('TB_ALUNO');
                 <td><?= $aluno['matricula'] ?></td>
                 <td><?= $aluno['nome'] ?></td>
                 <td>
-                    <a href="<?= __ALUNO_PROCESS__ ?>?action=editar&id=<?= $aluno['aluno_id'] ?>">Editar</a>
-                    <a href="<?= __ALUNO_PROCESS__ ?>?action=deletar&id=<?= $aluno['aluno_id'] ?>">Excluir</a>
+                    <a href="<?= Mapping::getModuleURL('Aluno', 'index', array('action'=>'editar' ,'id'=>$aluno['aluno_id']) ) ?>">Editar</a>
+                    <a href="<?= Mapping::getModuleURL('Aluno', 'process', array('action'=>'deletar' ,'id'=>$aluno['aluno_id']) ) ?>">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>

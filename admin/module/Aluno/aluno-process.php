@@ -3,12 +3,12 @@
 /**
  * Config
  */
-require_once '../util/config.php';
+require_once '../../util/config.php';
 
 /**
  * Core
  */
-require_once '../core/Core.php';
+require_once '../../core/Core.php';
 $core = new Core();
 
 /**
@@ -39,7 +39,8 @@ if ( !empty( $_GET['action'] ) ) {
 			$core->insert($args, $table_reference);
 
 			// Redireciona a página
-			header ("location: ../aluno.php?c=1");
+			$url = Mapping::getModuleURL('Aluno', 'index', array('c'=>1) );
+			header ("location: $url");
 			break;
 
 		case 'editar':
@@ -50,8 +51,8 @@ if ( !empty( $_GET['action'] ) ) {
 			}
 
 			// Redireciona a página
-			header ("location: ../aluno.php?action=editar&id=".$id);
-
+			$url = Mapping::getModuleURL('Aluno', 'editar', array('id'=>$id) );
+			header ("location: $url");
 			break;
 
 		case 'salvar':
@@ -74,7 +75,9 @@ if ( !empty( $_GET['action'] ) ) {
 				// Insere os dados
 				$core->update($id, $args, $table_reference);
 
-				header ("location: ../aluno.php?s=1");
+				// Redireciona a página
+				$url = Mapping::getModuleURL('Aluno', 'index', array('s'=>1) );
+				header ("location: $url");
 			}
 
 			break;
@@ -90,7 +93,8 @@ if ( !empty( $_GET['action'] ) ) {
 			$core->delete($id, $table_reference);
 
 			// Redireciona a página
-			header ("location: ../aluno.php?d=1");
+			$url = Mapping::getModuleURL('Aluno', 'index', array('d'=>1) );
+			header ("location: $url");
 			break;
 		
 		default:
@@ -99,6 +103,7 @@ if ( !empty( $_GET['action'] ) ) {
 
 } else {
 
-	echo "nada";
+	$url = __ADMIN__;
+	header ("location: $url");
 
 }

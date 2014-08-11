@@ -1,8 +1,5 @@
 <?php 
 
-	// Head
-	require_once 'include/head.php'; 
-
 	// Ação do usuário
 	if ( !empty( $_GET['action'] ) ) {
 
@@ -10,30 +7,26 @@
 
 		switch ($user_action) {
 			case 'cadastrar':
-				require_once 'include/aluno-cadastrar.php';
+				require_once 'aluno-cadastrar.php';
 				break;
 			case 'editar':
 
 				// Verifica o ID
 				if( !empty($_GET['id']) ) {
-					$id = $_GET['id'];
-					require_once 'include/aluno-editar.php';
+                    Mapping::requireModulePath('Aluno', 'editar');
 				} else {
-					require_once 'include/aluno-main.php';
+                    Mapping::requireModulePath('Aluno', 'list');
 				}
 				
 				break;
 			
 			default:
-				// 404
+				Mapping::requireModulePath('Aluno', 'list');
 				break;
 		}
 
 	} else {
 
-		require 'include/aluno-main.php';
+		Mapping::requireModulePath('Aluno', 'list');
 
 	}
-
-	// Footer
-	require_once 'include/footer.php'; 

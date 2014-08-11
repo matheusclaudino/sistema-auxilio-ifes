@@ -52,7 +52,7 @@
             );
          
             require_once 'util/Fields.php';
-            Fields::startFields($args, 'process/aluno-process.php?action=salvar&id='.$id, 'POST', $aluno[0]);
+            Fields::startFields($args, Mapping::getModuleURL('Aluno', 'process', array('action'=>'salvar','id'=>$id)), 'POST', $aluno[0]);
 
         ?>
 

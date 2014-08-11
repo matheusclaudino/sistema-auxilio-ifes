@@ -4,17 +4,12 @@
  * Pasta root
  */
 define('__ROOT__', dirname(dirname(dirname(__FILE__)))); 
+define("__MODULE_PATH__", __ROOT__."/admin/module");
 
 /**
- * Página inicial da área de administração
- */
-
-
-/**
- * Mapeamento de arquivos 
+ * URLS
  */
 define("__ADMIN__", "http://localhost/sistema-auxilio-ifes/admin");
-define('__ALUNO_PROCESS__', __ADMIN__."/process/aluno-process.php");
 
 /**
  * Aluno attributes
@@ -132,3 +127,6 @@ $args = array();
         'type' => 'text'
     );
 define ("ALUNO_FIELDS", serialize ( $args ));
+
+// Start mapping
+require_once __ROOT__.'/admin/util/mapping.php';

@@ -12,7 +12,7 @@
 	#RewriteRule ^admin/$ index.php?page=admin [NC,L]
 
 	# Página do aluno
-	RewriteRule ^admin/aluno/?$ admin/aluno.php [NC,L]
+	RewriteRule ^admin/aluno/?$ admin/module/Aluno/aluno.php [NC,L]
 
 	# Página dgerenciar aluno
 	#RewriteRule ^admin/alunos/?$ index.php/admin?page=gerenciar-alunos [NC,L]
