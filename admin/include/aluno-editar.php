@@ -16,8 +16,6 @@
          */
         $aluno = $core->get($id, 'TB_ALUNO');
 
-        var_dump($aluno[0]);
-
     }
 
 ?>
@@ -54,7 +52,7 @@
             );
          
             require_once 'util/Fields.php';
-            Fields::startFields($args, 'process/aluno-process.php?action=salvar&id='.$id, 'POST', $values);
+            Fields::startFields($args, 'process/aluno-process.php?action=salvar&id='.$id, 'POST', $aluno[0]);
 
         ?>
 

@@ -61,39 +61,30 @@ class Dao {
            $campos = substr($campos, 0, -2);
            $values = substr($values, 0, -2);
 
-           $sql = "UPDATE $table SET ";
-
+            // Monta o SQL
+            $sql = "UPDATE $table SET ";
             foreach($dados as $campo => $valor) {
-
-                $sql .= "$campo = :$campo, ";
-
+                $sql .= "$campo=:$campo, ";
             }
-
             $sql = substr($sql, 0, -2);
-
             $sql .= " WHERE ".$table."_id=:id";
 
-            echo $sql;
+            // Pega a conexão
+            $con = DBConnect::getInstance(); 
+            $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
 
-            echo "<br><br>";
+            // Prepara o SQL
+            $stmt = $con->prepare($sql);
 
-            foreach($dados as $campo => $valor) {
-
-                echo "'".$valor."'<br>";
-
+            // Monta o array de valores
+            $values = array();
+            foreach ($dados as $campo => &$valor) {
+                $values[":$campo"] = $valor;
             }
+            $values[":id"] = $id;
 
-            // $con = DBConnect::getInstance(); 
-            // $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
-
-            // $stmt = $con->prepare($sql);
-
-            // // http://stackoverflow.com/questions/4174524/binding-params-for-pdo-statement-inside-a-loop
-            // foreach ($dados as $campo => &$valor) {
-            //     $stmt->bindParam( ':'.$campo, $valor);
-            // }
-
-            // $stmt->execute();
+            // Executa o SQL
+            $stmt->execute($values);
 
         } catch(PDOException $e) { 
             echo 'Error: ' . $e->getMessage();

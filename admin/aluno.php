@@ -19,7 +19,7 @@
 					$id = $_GET['id'];
 					require_once 'include/aluno-editar.php';
 				} else {
-					require_once 'include/aluno.php';
+					require_once 'include/aluno-main.php';
 				}
 				
 				break;
@@ -31,7 +31,7 @@
 
 	} else {
 
-		require 'include/aluno.php';
+		require 'include/aluno-main.php';
 
 	}
 

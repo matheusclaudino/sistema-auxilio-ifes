@@ -39,8 +39,4 @@ class Core {
         return $this->dao->delete($id, $table);
     }
 
-    public function get($id, $table) {
-        return $this->dao->get($id, $table);
-    }
-
 }

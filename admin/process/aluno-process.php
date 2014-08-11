@@ -71,16 +71,12 @@ if ( !empty( $_GET['action'] ) ) {
 					$args[ $value['id'] ] = $_POST[ $value['id'] ];
 				endforeach;
 
-				echo "<pre>";
-				print_r($args);
-				echo "</pre>";
-
-				echo " ------------------------------ END PROCESS <br><br><br>";
-
 				// Insere os dados
 				$core->update($id, $args, $table_reference);
+
+				header ("location: ../aluno.php?s=1");
 			}
-			
+
 			break;
 
 		case 'deletar':
