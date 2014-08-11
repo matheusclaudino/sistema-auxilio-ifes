@@ -48,13 +48,13 @@
             $args = unserialize(ALUNO_FIELDS);
 
             $args[] = array(
-                'name' => 'Cadastrar',
-                'id' => 'cadastrar',
+                'name' => 'Salvar',
+                'id' => 'salvar',
                 'type' => 'submit'
             );
          
             require_once 'util/Fields.php';
-            Fields::startFields($args, 'process/aluno-process.php?action=editar', 'POST');
+            Fields::startFields($args, 'process/aluno-process.php?action=salvar&id='.$id, 'POST', $values);
 
         ?>
 

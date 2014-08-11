@@ -41,6 +41,66 @@ class Dao {
 
     }
 
+    public function update($id, $dados, $table) {
+
+        try {
+
+            $campos = "";
+            $values = "";
+
+            $table = DBConnect::getTabela($table);
+
+
+            foreach($dados as $campo => $valor) {
+
+                $campos = $campos.$campo.', ';
+                $values = $values.':'.$campo.', ';
+
+            }
+
+           $campos = substr($campos, 0, -2);
+           $values = substr($values, 0, -2);
+
+           $sql = "UPDATE $table SET ";
+
+            foreach($dados as $campo => $valor) {
+
+                $sql .= "$campo = :$campo, ";
+
+            }
+
+            $sql = substr($sql, 0, -2);
+
+            $sql .= " WHERE ".$table."_id=:id";
+
+            echo $sql;
+
+            echo "<br><br>";
+
+            foreach($dados as $campo => $valor) {
+
+                echo "'".$valor."'<br>";
+
+            }
+
+            // $con = DBConnect::getInstance(); 
+            // $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
+
+            // $stmt = $con->prepare($sql);
+
+            // // http://stackoverflow.com/questions/4174524/binding-params-for-pdo-statement-inside-a-loop
+            // foreach ($dados as $campo => &$valor) {
+            //     $stmt->bindParam( ':'.$campo, $valor);
+            // }
+
+            // $stmt->execute();
+
+        } catch(PDOException $e) { 
+            echo 'Error: ' . $e->getMessage();
+        }
+
+    }
+
     /**
      * delete Deleta um registro no banco
      * @param  int $id Identificação do registro
@@ -57,7 +117,7 @@ class Dao {
             $con = DBConnect::getInstance(); 
             $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
 
-            $stmt = $con->prepare("DELETE FROM $table WHERE aluno_id=:id");
+            $stmt = $con->prepare("DELETE FROM $table WHERE ".$table."_id=:id");
 
             $stmt->bindParam( ':id', $id);
 
