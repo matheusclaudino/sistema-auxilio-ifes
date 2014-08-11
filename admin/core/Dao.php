@@ -104,4 +104,44 @@ class Dao {
         return $this->select("SELECT * FROM ".$table);
     }
 
+    /**
+     * get Retorna o registro do banco de dados identificado pelo ID
+     * @param  int $id ID do registro no banco de dados
+     * @param  string $table Tabela do banco onde o registro está localizado
+     * @return array     Registro
+     */
+    public function get($id, $table) {
+        
+        try {
+
+            //Recupera o nome da tabela
+            $table = DBConnect::getTabela($table);
+            $table_id = $table.'_id';
+
+            //DB
+            $con = DBConnect::getInstance(); 
+            $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); 
+
+            $stmt = $con->prepare("SELECT * FROM $table WHERE $table_id=:id");
+
+            $stmt->bindParam( ':id', $id);
+
+            $stmt->execute();
+
+            $result = array();
+
+            // Query results
+            while ( $row = $stmt->fetch(\PDO::FETCH_ASSOC) ) {
+                $result[] = $row;
+            }
+            
+            return $result;
+
+        } catch(PDOException $e) { 
+            echo 'Error: ' . $e->getMessage();
+            return false;
+        }
+
+    }
+
 }

@@ -1,3 +1,26 @@
+<?php 
+
+    // ID
+    if( !empty($_GET['id']) ) {
+        
+        $id = $_GET['id'];
+
+        /**
+         * Inicializando core
+         */
+        require_once __ROOT__.'/admin/core/Core.php';
+        $core = new Core();
+
+        /**
+         * Lista de alunos cadastrados 
+         */
+        $aluno = $core->get($id, 'TB_ALUNO');
+
+        var_dump($aluno[0]);
+
+    }
+
+?>
 <div class="row">
 
     <div class="col-sm-12">

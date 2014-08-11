@@ -22,6 +22,10 @@ class Core {
         return $this->dao->getAll($table);
     }
 
+    public function get($id, $table) {
+        return $this->dao->get($id, $table);
+    }
+
     /**
      * delete Deleta um registro
      * @param  int $id identificação do registro

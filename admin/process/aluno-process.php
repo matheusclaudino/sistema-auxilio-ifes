@@ -49,7 +49,8 @@ if ( !empty( $_GET['action'] ) ) {
 				$id = $_GET['id'];
 			}
 
-			echo "$id";
+			header ("location: ../aluno.php?action=editar&id=".$id);
+
 			break;
 
 		case 'deletar':

@@ -24,7 +24,8 @@ $args = array();
     $args[] = array(
         'name' => 'Nome',
         'id' => 'nome',
-        'type' => 'text'
+        'type' => 'text',
+        'value' => 'text'
     );
     $args[] = array(
         'name' => 'Matrícula',
