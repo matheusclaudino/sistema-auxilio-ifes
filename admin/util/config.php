@@ -1,19 +1,15 @@
 <?php
 
 /**
- * Autoload
+ * Pasta root
  */
-require_once 'autoload.php';
+define('__ROOT__', dirname(dirname(dirname(__FILE__)))); 
+define("__MODULE_PATH__", __ROOT__."/admin/module");
 
 /**
- * Página inicial da área de administração
+ * URLS
  */
-define("ADMIN_URL", "http://localhost/sistema-auxilio-ifes/admin/");
-
-/**
- * Pasta do tema usado
- */
-define("THEME_PATH", "admin/skin/admin/");
+define("__ADMIN__", "http://localhost/sistema-auxilio-ifes/admin");
 
 /**
  * Aluno attributes
@@ -120,14 +116,17 @@ $args = array();
     //     'id' => 'senha',
     //     'type' => 'text'
     // );
-    // $args[] = array(
-    //     'name' => 'Turma ID',
-    //     'id' => 'turma_id',
-    //     'type' => 'text'
-    // );
-    // $args[] = array(
-    //     'name' => 'Ficha ID',
-    //     'id' => 'ficha_id',
-    //     'type' => 'text'
-    // );
+    $args[] = array(
+        'name' => 'Turma ID',
+        'id' => 'turma_id',
+        'type' => 'text'
+    );
+    $args[] = array(
+        'name' => 'Ficha ID',
+        'id' => 'ficha_id',
+        'type' => 'text'
+    );
 define ("ALUNO_FIELDS", serialize ( $args ));
+
+// Start mapping
+require_once __ROOT__.'/admin/util/mapping.php';
